@@ -1,0 +1,16 @@
+//never write CSS in here 
+
+//Variables should always be on top
+@import "partials/variables";
+//Then layout
+@import "partials/layout";
+//Then header
+@import "partials/header";
+
+@import "partials/home";
+
+@import "partials/disabled";
+
+/////// then everything between header and footer
+
+// Then footer

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="Game of Thrones Boardgame created with HTML5 and socket.io, Choose a GOT symbol and play against friends online.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+      <!--Navigation-->
+      <div class="navigation">
+
+      </div>
+
+      <!--Container-->
+      <div class="container">
+        <h1 class="text-center">Select your character</h1>
+        <div class=" [ player ] ">
+          <div class=" [ player-1 ] ">
+            <div class=" [ player-1-circle ] "></div>
+            <div class=" [ player-1-name ] ">
+              Player 1
+            </div>
+          </div>
+          <div class=" [ player-1 ] ">
+            <div class=" [ player-2-circle ] "></div>
+            <div class=" [ player-2-name ] ">
+              Player 2
+            </div>
+          </div>
+        </div>
+
+        <div class=" [ cards row ] " id="cardContainer">
+          <div id="">
+            <h3 class="cards-name">Jon Snow</h3>
+            <a href="" id="583" type="button" onClick="characterInfo_click(this.id)">Read more</a>
+          </div>
+          <div id="">
+              <h3 class="cards-name">Sansa Stark</h3>
+              <a href="" id="957" type="button" onClick="characterInfo_click(this.id)">Read more</a>
+            </div>
+            <div id="">
+                <h3 class="cards-name">Eddard Stark</h3>
+                <a href="" id="339" type="button" onClick="characterInfo_click(this.id)">Read more</a>
+              </div>
+
+              <p id="buttonId"></p>
+
+        </div>
+
+      </div> <!--/container-->
+
+
+
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    </body>
+</html>
