@@ -46,16 +46,20 @@ let apiUrl = 'https://anapioficeandfire.com/api/characters/';
     
 })
 
-    // If the "read more" button is clicked, fetch api + character id 
+
     var card = document.getElementById("cardContainer"); 
     var cardText = document.getElementById("buttonId"); 
 
-  
+      // If the "read more" button is clicked, add the button id to end of url
     function characterInfo_click(clicked) { 
         cardText.innerHTML = clicked; 
         if(clicked){
             let characterUrl = apiUrl + clicked;
             console.log(characterUrl);
+            if(characterUrl){
+                console.log("name = " );
+            }
+         //   console.log(characterUrl + "/" + name)
         }
         event.preventDefault();
     }          
