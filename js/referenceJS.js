@@ -101,3 +101,42 @@ function removeToken(){
     activePlayer();
 
 }
+
+
+
+
+
+
+
+
+
+
+
+// code from :::
+// https://stackoverflow.com/questions/50702802/how-to-print-all-character-names-from-game-of-thrones-api-which-is-in-paginated
+/*
+function getItems(page) {
+    var req = new XMLHttpRequest();
+  
+    req.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //console.log(req.getResponseHeader("link"));
+        let charObj = JSON.parse(this.responseText);
+        for (let i = 0; i < charObj.length; i++) {
+          let p = document.createElement("p");
+          let name = document.createTextNode(charObj[i].name);
+          p.appendChild(name);
+          document.body.appendChild(p);
+        }
+      }
+    };
+    req.open("GET", "https://www.anapioficeandfire.com/api/characters?page=" + page + "&pageSize=10", true);
+    req.send();
+  };
+  
+  for (let i = 1; i <= 214; i++) {
+    getItems(i)
+  }
+
+// END OF BORROWED CODE
+*/

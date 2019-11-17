@@ -1,69 +1,38 @@
-// code from :::
-// https://stackoverflow.com/questions/50702802/how-to-print-all-character-names-from-game-of-thrones-api-which-is-in-paginated
-/*
-function getItems(page) {
-    var req = new XMLHttpRequest();
-  
-    req.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        //console.log(req.getResponseHeader("link"));
-        let charObj = JSON.parse(this.responseText);
-        for (let i = 0; i < charObj.length; i++) {
-          let p = document.createElement("p");
-          let name = document.createTextNode(charObj[i].name);
-          p.appendChild(name);
-          document.body.appendChild(p);
-        }
-      }
-    };
-    req.open("GET", "https://www.anapioficeandfire.com/api/characters?page=" + page + "&pageSize=10", true);
-    req.send();
-  };
-  
-  for (let i = 1; i <= 214; i++) {
-    getItems(i)
-  }
 
-// END OF BORROWED CODE
-*/
 
 
 
 let apiUrl = 'https://anapioficeandfire.com/api/characters/';
-
-  fetch(apiUrl)
-.then((response) => {return response.json()})
-.then((result) => {
-    var character = result;
-    console.log(character);
-/*
-    character.map((value,index) => {
-        return document.getElementById('card').innerHTML += `<div>
-        <h1>${value.aliases}</h1>
-        <a> Read more </a>`
-    })
-*/
+let player1 = "";
+let player2 = "";
     
-})
-
 
     var card = document.getElementById("cardContainer"); 
     var cardText = document.getElementById("buttonId"); 
 
       // If the "read more" button is clicked, add the button id to end of url
     function characterInfo_click(clicked) { 
-        cardText.innerHTML = clicked; 
+       // cardText.innerHTML = clicked; 
         if(clicked){
             let characterUrl = apiUrl + clicked;
+            fetch(characterUrl)
+            .then((response) => {return response.json()})
+            .then((result) => {
+                var character = result;
+                console.log(character.aliases);
+                let name = character.name;
+
+
+            })
             console.log(characterUrl);
+            cardText.innerHTML = characterUrl; 
             if(characterUrl){
-                console.log("name = " );
+
             }
          //   console.log(characterUrl + "/" + name)
         }
         event.preventDefault();
     }          
-
 
 
 
