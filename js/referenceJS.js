@@ -140,3 +140,20 @@ function getItems(page) {
 
 // END OF BORROWED CODE
 */
+
+
+    // a = forrige
+    // c = valgt
+    if(a === c) {
+        c = event.target.id;
+    } else if(c != "" && a != "" && c != a){
+        a = c;
+        c = event.target.id;
+    } else {
+        c = event.target.id;
+        a = event.target.id;
+    }   
+    console.log("Valgt: " + c);
+    console.log("Forrige: " + a);
+    document.getElementById(a).parentNode.classList.remove("focusPlayer1");
+    document.getElementById(c).parentNode.classList.add("focusPlayer1");
