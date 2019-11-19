@@ -79,6 +79,10 @@ body {
 }
 
 .focusPlayer1 {
+  border: 2px solid blue;
+}
+
+.focusPlayer2 {
   border: 2px solid green;
 }
 

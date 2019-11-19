@@ -25,25 +25,56 @@ function setCorrectPlayerUrl(characterId) {
         player1Character = apiUrl + characterId;
         console.log("player1 " + player1Character);
         
-        
-        // Add border to clicked character
-        $(".cards-img").click(function(){
-            $(this).parent().addClass("focusPlayer1");
-        });
-
-
     } else {
         player2Character = apiUrl + characterId;
         console.log("player2 " + player2Character);
-        $(".cards-img").click(function(){
-            $(this).parent().css("border","2px solid blue");
-        });
     }
 }
+
+var items = document.getElementsByClassName(".cards-img");
+
+var currentSelected = "";
+var previousSelected = "0";
+var hasPlayerChanged = false;
+
+function setPlayerBorder() {
+    if(!player1Active && !hasPlayerChanged){
+         currentSelected = "";
+         previousSelected = "0";
+         hasPlayerChanged = true;
+    }
+    var eventTargetId =  event.target.id;
+
+    if(previousSelected === currentSelected){
+        currentSelected = eventTargetId;
+
+    }else if(currentSelected != "" && previousSelected != "" && currentSelected != previousSelected){
+        previousSelected = currentSelected;
+        currentSelected = eventTargetId;
+    }
+    
+    else{
+        currentSelected = eventTargetId;
+        previousSelected = eventTargetId;
+    }
+    if(player1Active){
+        document.getElementById(previousSelected).parentNode.classList.remove("focusPlayer1");
+        document.getElementById(currentSelected).parentNode.classList.add("focusPlayer1");
+    } else{
+
+            document.getElementById(previousSelected).parentNode.classList.remove("focusPlayer2");
+            document.getElementById(currentSelected).parentNode.classList.add("focusPlayer2");
+    }
+    console.log("previousSelected = " + previousSelected)
+    console.log("currentSelected = " + currentSelected)
+}
+
 
 // if the player clicks an image, take that image id, and 
 // setCorrectPlayerUrl to have the id of the character so you get a full url
 function choosePlayer(clicked) {
+    setPlayerBorder();
+
     player1Character = clicked;
 
     switch (player1Character) {
@@ -139,6 +170,8 @@ function characterInfo_click(clicked) {
                 document.getElementById("characterModalName").innerHTML = character.name;
                 document.getElementById("characterModalGender").innerHTML = "Gender: " + character.gender;
                 document.getElementById("characterModalCulture").innerHTML = "Culture: " + character.culture;
+                document.getElementById('characterModalTitles').innerHTML = "";
+                document.getElementById('characterModalAliases').innerHTML = "";
 
 
                 // FIXXXXXXX saves titles of other characters that has been clicked on
