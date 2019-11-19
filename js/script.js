@@ -24,9 +24,20 @@ function setCorrectPlayerUrl(characterId) {
     if (player1Active) {
         player1Character = apiUrl + characterId;
         console.log("player1 " + player1Character);
+        
+        
+        // Add border to clicked character
+        $(".cards-img").click(function(){
+            $(this).parent().addClass("focusPlayer1");
+        });
+
+
     } else {
         player2Character = apiUrl + characterId;
         console.log("player2 " + player2Character);
+        $(".cards-img").click(function(){
+            $(this).parent().css("border","2px solid blue");
+        });
     }
 }
 
@@ -34,6 +45,7 @@ function setCorrectPlayerUrl(characterId) {
 // setCorrectPlayerUrl to have the id of the character so you get a full url
 function choosePlayer(clicked) {
     player1Character = clicked;
+
     switch (player1Character) {
         // if the player clicks on "selectJon" image, give setCorrectPlayerUrl the paramater of 583, which is Jon´s url ending
         case "selectJon":
@@ -75,23 +87,29 @@ function choosePlayer(clicked) {
 // Checks if the players have chosen a character.
 function readyUp() {
 
-    // if player1 has not chosen a character, and player1 is the active player
+    // if player1 has chosen a character, and player1 is the active player
     if (player1Character != "" && player1Active) {
         player1Active = false;
         console.log("character 1 = " + player1Character);
 
         // Set activeClass to player1 since it is his turn to select character
         activeClass();
-    } else {
 
+    } else if(player1Character == ""){
+        alert("Player 1 needs to choose a character");
+    }
+    else if(player2Character != ""){
         // if player1 HAS chosen a character and is no longer the active player
         player1Active = true;
-        console.log("character 2 = " + player1Character);
+        console.log("character 2 = " + player2Character);
 
         // Set activeClass to player2 since it is his turn to select character
         activeClass();
+    } else if(player2Character == ""){
+        alert("Player 2 needs to choose a character");
     }
 }
+
 
 
 
@@ -148,6 +166,10 @@ function characterInfo_click(clicked) {
     // Stop site from reloading on every button click
     event.preventDefault();
 }
+
+
+
+
 
 
 

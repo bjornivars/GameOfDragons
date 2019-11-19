@@ -78,6 +78,19 @@ body {
   background-color: black;
 }
 
+.focusPlayer1 {
+  border: 2px solid green;
+}
+
+.dice {
+  transition: all 0.75s 0.25s;
+  transform: rotate(0);
+}
+
+.rotate {
+  transform: rotate(1440deg);
+}
+
 .navbar {
   background-color: #776E39;
 }
