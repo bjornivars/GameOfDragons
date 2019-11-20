@@ -95,6 +95,10 @@ body {
   transform: rotate(1440deg);
 }
 
+#startBtn {
+  display: none;
+}
+
 .navbar {
   background-color: #776E39;
 }

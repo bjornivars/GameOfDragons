@@ -37,6 +37,7 @@ var currentSelected = "";
 var previousSelected = "0";
 var hasPlayerChanged = false;
 
+
 function setPlayerBorder() {
     if(!player1Active && !hasPlayerChanged){
          currentSelected = "";
@@ -117,7 +118,13 @@ function choosePlayer(clicked) {
 
 // Checks if the players have chosen a character.
 function readyUp() {
-
+    if(player1Character != "" && player2Character != ""){
+        // Disables onClick when both players has chosen
+        var images = document.getElementsByClassName('cards-img');
+        for(var i = 0; i < images.length; i++) {
+           images[i].removeAttribute('onclick');
+        }
+    }else{
     // if player1 has chosen a character, and player1 is the active player
     if (player1Character != "" && player1Active) {
         player1Active = false;
@@ -125,6 +132,9 @@ function readyUp() {
 
         // Set activeClass to player1 since it is his turn to select character
         activeClass();
+       document.getElementById("readyUpBtn").style.display = "none";
+       document.getElementById("startBtn").style.display = "block";
+        // document.getElementById("readyUpBtn").removeAttribute('onclick');
 
     } else if(player1Character == ""){
         alert("Player 1 needs to choose a character");
@@ -138,9 +148,25 @@ function readyUp() {
         activeClass();
     } else if(player2Character == ""){
         alert("Player 2 needs to choose a character");
+    } 
     }
+//console.log(player1Character + " ll " + player2Character);
 }
 
+function sendToStorage(){
+    readyUp();
+    console.log(player1Character + " 0 " + player2Character);
+    
+    }
+    
+
+/*
+function sendToStorage(){
+
+
+}
+*/
+//sessionStorage.clear();
 
 
 
@@ -199,7 +225,6 @@ function characterInfo_click(clicked) {
     // Stop site from reloading on every button click
     event.preventDefault();
 }
-
 
 
 
