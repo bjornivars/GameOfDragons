@@ -9,13 +9,27 @@ let trap2={
     penalty: 3,
     message: "Tou just got pushed out of the window. Move back 3 steps"
 }
+
+
+//init();
+
+let player1 = sessionStorage.getItem('player1');
+let player2 = sessionStorage.getItem('player2');
+
+function getSessionStorage(){
+    document.getElementById("testSession").innerHTML = player1;
+    document.getElementById("testSession2").innerHTML = player2;
+
+} 
+getSessionStorage();
+
+// some variables
 let dice, diceRoll, scores, activePlayer;
 dice = Math.floor(Math.random() * 6) + 1;
 
 
-init();
 
-
+// Dice 
 document.querySelector('.btn-roll').addEventListener('click', function() {
     var diceDOM = document.querySelector('.dice');
     // Spin the dice
@@ -30,10 +44,10 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         var dice = Math.floor(Math.random() * 6) + 1;
 
         //2. Display the result in DOM
-        diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png';
+        setTimeout(function(){ 
+            diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png'; 
+        }, 250);
         console.log(dice);
-
-
     }    
 });
 
@@ -48,9 +62,11 @@ function nextPlayer() {
 }
 
 // The initial state of the game before starting to play
+/*
 function init() {
     scores = [0, 0];
     activePlayer = 0;
     roundScore = 0;
     gamePlaying = true;
     }
+    */

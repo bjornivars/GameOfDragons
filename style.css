@@ -99,6 +99,21 @@ body {
   display: none;
 }
 
+.startGame {
+  margin-top: 15em;
+}
+
+.largeStartButton {
+  padding: 50px;
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+
+.modal-backdrop.show {
+  opacity: 0.75;
+}
+
 .navbar {
   background-color: #776E39;
 }

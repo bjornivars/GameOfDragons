@@ -5,11 +5,13 @@ let player2Character = "";
 let player1Active = true;
 
 // Gives CSS styling to the active and disabled player
+
 function activeClass() {
     if (player1Active) {
         document.getElementById("player1Name").classList.add("active");
         document.getElementById("player2Name").classList.remove("active");
         document.getElementById("player2Name").classList.add("disabled");
+
 
     } else {
         document.getElementById("player2Name").classList.add("active");
@@ -24,59 +26,37 @@ function setCorrectPlayerUrl(characterId) {
     if (player1Active) {
         player1Character = apiUrl + characterId;
         console.log("player1 " + player1Character);
+        if (confirm('Are you sure you want to be this character?')) {
+            sessionStorage.setItem("player1", player1Character);
+            player1Active = false;
+            activeClass();
+        } else {
+            // Do nothing!
+        }
         
     } else {
         player2Character = apiUrl + characterId;
         console.log("player2 " + player2Character);
+        if (confirm('Are you sure you want to be this character?' )) {
+            sessionStorage.setItem("player2", player2Character);
+
+        } else {
+            // Do nothing!
+        }
+
+        if (sessionStorage.getItem("player1") && sessionStorage.getItem("player2")) {
+            console.log("nice");
+            $('#startGameModal').modal('show');
+
+        }
     }
 }
-
-var items = document.getElementsByClassName(".cards-img");
-
-var currentSelected = "";
-var previousSelected = "0";
-var hasPlayerChanged = false;
-
-
-function setPlayerBorder() {
-    if(!player1Active && !hasPlayerChanged){
-         currentSelected = "";
-         previousSelected = "0";
-         hasPlayerChanged = true;
-    }
-    var eventTargetId =  event.target.id;
-
-    if(previousSelected === currentSelected){
-        currentSelected = eventTargetId;
-
-    }else if(currentSelected != "" && previousSelected != "" && currentSelected != previousSelected){
-        previousSelected = currentSelected;
-        currentSelected = eventTargetId;
-    }
-    
-    else{
-        currentSelected = eventTargetId;
-        previousSelected = eventTargetId;
-    }
-    if(player1Active){
-        document.getElementById(previousSelected).parentNode.classList.remove("focusPlayer1");
-        document.getElementById(currentSelected).parentNode.classList.add("focusPlayer1");
-    } else{
-
-            document.getElementById(previousSelected).parentNode.classList.remove("focusPlayer2");
-            document.getElementById(currentSelected).parentNode.classList.add("focusPlayer2");
-    }
-    console.log("previousSelected = " + previousSelected)
-    console.log("currentSelected = " + currentSelected)
-}
-
+sessionStorage.clear();
 
 // if the player clicks an image, take that image id, and 
 // setCorrectPlayerUrl to have the id of the character so you get a full url
 function choosePlayer(clicked) {
-    setPlayerBorder();
-
-    player1Character = clicked;
+        player1Character = clicked;
 
     switch (player1Character) {
         // if the player clicks on "selectJon" image, give setCorrectPlayerUrl the paramater of 583, which is Jon´s url ending
@@ -114,60 +94,8 @@ function choosePlayer(clicked) {
         default:
             player1Character = "";
     }
-}
-
-// Checks if the players have chosen a character.
-function readyUp() {
-    if(player1Character != "" && player2Character != ""){
-        // Disables onClick when both players has chosen
-        var images = document.getElementsByClassName('cards-img');
-        for(var i = 0; i < images.length; i++) {
-           images[i].removeAttribute('onclick');
-        }
-    }else{
-    // if player1 has chosen a character, and player1 is the active player
-    if (player1Character != "" && player1Active) {
-        player1Active = false;
-        console.log("character 1 = " + player1Character);
-
-        // Set activeClass to player1 since it is his turn to select character
-        activeClass();
-       document.getElementById("readyUpBtn").style.display = "none";
-       document.getElementById("startBtn").style.display = "block";
-        // document.getElementById("readyUpBtn").removeAttribute('onclick');
-
-    } else if(player1Character == ""){
-        alert("Player 1 needs to choose a character");
-    }
-    else if(player2Character != ""){
-        // if player1 HAS chosen a character and is no longer the active player
-        player1Active = true;
-        console.log("character 2 = " + player2Character);
-
-        // Set activeClass to player2 since it is his turn to select character
-        activeClass();
-    } else if(player2Character == ""){
-        alert("Player 2 needs to choose a character");
-    } 
-    }
-//console.log(player1Character + " ll " + player2Character);
-}
-
-function sendToStorage(){
-    readyUp();
-    console.log(player1Character + " 0 " + player2Character);
-    
-    }
-    
-
-/*
-function sendToStorage(){
-
 
 }
-*/
-//sessionStorage.clear();
-
 
 
 // Just for visual look of api in html
@@ -199,13 +127,10 @@ function characterInfo_click(clicked) {
                 document.getElementById('characterModalTitles').innerHTML = "";
                 document.getElementById('characterModalAliases').innerHTML = "";
 
-
-                // FIXXXXXXX saves titles of other characters that has been clicked on
                 character.titles.map((value, index) => {
                     return document.getElementById('characterModalTitles').innerHTML += `
                     <li>${value}</li> `
                 })
-                // FIXXXXXXX saves aliases of other characters that has been clicked on
                 character.aliases.map((value, index) => {
                     return document.getElementById('characterModalAliases').innerHTML += `
                     <li>${value}</li> `
@@ -215,10 +140,7 @@ function characterInfo_click(clicked) {
 
             })
         console.log(characterUrl);
-        apiText.innerHTML = characterUrl;
-        if (characterUrl) {
-
-        }
+        //apiText.innerHTML = characterUrl;
 
         //   console.log(characterUrl + "/" + name)
     }
@@ -231,25 +153,5 @@ function characterInfo_click(clicked) {
 
 
 
-
 /*
-function viewMoreFunction(name,url){ // name, url er parameter
-    console.log(name, url)
-    document.getElementById(name + 'ReadMore').innerHTML = '';
-    fetch(url)
-    .then((response) => {return response.json()})
-    .then((result) => {
-        var abilities = result.abilities;
-        console.log(abilities);
-        abilities.map((value, index) => {
-            return document.getElementById(name + 'ReadMore').innerHTML += `<p>${value.ability.name}</p>`
-        })
-    })
-}
-*/
-
-
-
-/*
-https://anapioficeandfire.com/api/characters?name=Sansa%20Stark&name=Eddard%20Stark&name=Jon%20Snow&name=Jaime%20Lannister&name=Joffrey%20Baratheon&name=daenerys%20Targaryen&name=Brandon%20Stark&name=Arya%20Stark&name=Tyrion%20Lannister&aliases=Night%20King
 */
