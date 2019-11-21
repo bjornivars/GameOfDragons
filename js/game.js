@@ -1,35 +1,27 @@
+// some variables
+let dice, diceRoll, scores, activePlayer1, player1Character, player2Character;
 
-let trap1={
-    tileId: 4,
-    penalty: 3,
-    message: "Tou just got pushed out of the window. Move back 3 steps"
-}
-let trap2={
-    tileId: 12,
-    penalty: 3,
-    message: "Tou just got pushed out of the window. Move back 3 steps"
-}
-
-
-//init();
+player1Character = document.getElementById("player1Character");
+player2Character = document.getElementById("player2Character");
+dice = Math.floor(Math.random() * 6) + 1;
+gamePlaying = true;
 
 let player1 = sessionStorage.getItem('player1');
 let player2 = sessionStorage.getItem('player2');
 
-function getSessionStorage(){
-    document.getElementById("testSession").innerHTML = player1;
-    document.getElementById("testSession2").innerHTML = player2;
 
-} 
-getSessionStorage();
-
-// some variables
-let dice, diceRoll, scores, activePlayer;
-dice = Math.floor(Math.random() * 6) + 1;
-
+function setPlayerImg(){
+    let player1Character = document.getElementById("player1img");
+    player1Character.src = "graphics/img/icons/" + player1 + ".png";
+    let player2Character = document.getElementById("player2img");
+    player2Character.src = "graphics/img/icons/" + player2 + ".png";
+    }
+setPlayerImg();
 
 
 // Dice 
+function game(){
+    // Create Dice and spin it
 document.querySelector('.btn-roll').addEventListener('click', function() {
     var diceDOM = document.querySelector('.dice');
     // Spin the dice
@@ -47,11 +39,12 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         setTimeout(function(){ 
             diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png'; 
         }, 250);
-        console.log(dice);
-    }    
+        // console.log(dice);
+    } 
+
 });
 
-
+} game();
 function nextPlayer() {
     //Next player
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -62,11 +55,5 @@ function nextPlayer() {
 }
 
 // The initial state of the game before starting to play
-/*
-function init() {
-    scores = [0, 0];
-    activePlayer = 0;
-    roundScore = 0;
-    gamePlaying = true;
-    }
-    */
+
+document.getElementById("square-29").appendChild(player1Character);
