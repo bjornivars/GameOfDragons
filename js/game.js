@@ -50,6 +50,7 @@ function game() {
 
                 if (scores[0] == scores[activePlayer]) {
                     setPlayerImg();
+                    winner();
                     let x = scores[0].toString();
                     console.log(x);
                     let y = document.getElementById(x);
@@ -59,11 +60,23 @@ function game() {
                 } else {
                     console.log("player2 turn");
                     setPlayerImg();
+                    winner();
                     let x = scores[1].toString();
                     let y = document.getElementById(x);
                     console.log(y);
                     document.getElementById(x).appendChild(player2Character);
                     nextPlayer();
+                }
+                function winner(){
+                    if(scores[0] >= 34){
+                        setPlayerImg();
+                        $('#winnerGameModal').modal('show');
+                        document.getElementById("winnerImg").src = player1Character.src
+                    }else if(scores[1] >= 34){
+                        setPlayerImg();
+                        $('#winnerGameModal').modal('show');
+                        document.getElementById("winnerImg").src = player2Character.src
+                    }
                 }
             }
         }
