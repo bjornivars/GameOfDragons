@@ -41,12 +41,24 @@ function game() {
                 diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png';
             }, 250);
 
+
             if (dice) {
                 //Add score
                 diceRollScore = dice;
                 scores[activePlayer] += diceRollScore;
                 console.log("player 1: " + scores[0]);
                 console.log("player 2: " + scores[1]);
+
+                // If dice rolled a 6, dont change the activePlayer as the same player gets another roll
+                function ifDiceRolledSix() {
+                    if (diceRollScore == 6) {
+                        activePlayer;
+                    }
+                    // Change the player if anything else than 6 is rolled
+                    else {
+                        nextPlayer();
+                    }
+                }
 
                 if (scores[0] == scores[activePlayer]) {
                     setPlayerImg();
@@ -55,8 +67,9 @@ function game() {
                     console.log(x);
                     let y = document.getElementById(x);
                     console.log(y);
-                    document.getElementById(x).appendChild(player1Character);
-                    nextPlayer();
+                    // Place player 1 om the correct tile according to his/hers score
+                    let player1Placement = document.getElementById(x).appendChild(player1Character);
+                    ifDiceRolledSix();
                 } else {
                     console.log("player2 turn");
                     setPlayerImg();
@@ -64,9 +77,22 @@ function game() {
                     let x = scores[1].toString();
                     let y = document.getElementById(x);
                     console.log(y);
-                    document.getElementById(x).appendChild(player2Character);
-                    nextPlayer();
+                    let player2Placement = document.getElementById(x).appendChild(player2Character);
+                    ifDiceRolledSix();
                 }
+
+                function smallerCharactersOnSameTile() {
+                    if (scores[1] == scores[0]) {
+                        setPlayerImg();
+                        player1Character.style.width = "48%";
+                        player2Character.style.width = "48%";
+                    } else {
+                        setPlayerImg();
+                        player1Character.style.width = "100%";
+                        player2Character.style.width = "100%";
+                    }
+
+                } smallerCharactersOnSameTile();
                 function winner() {
                     if (scores[0] >= 34) {
                         setPlayerImg();
