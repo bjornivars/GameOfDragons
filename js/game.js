@@ -67,12 +67,12 @@ function game() {
                     document.getElementById(x).appendChild(player2Character);
                     nextPlayer();
                 }
-                function winner(){
-                    if(scores[0] >= 34){
+                function winner() {
+                    if (scores[0] >= 34) {
                         setPlayerImg();
                         $('#winnerGameModal').modal('show');
                         document.getElementById("winnerImg").src = player1Character.src
-                    }else if(scores[1] >= 34){
+                    } else if (scores[1] >= 34) {
                         setPlayerImg();
                         $('#winnerGameModal').modal('show');
                         document.getElementById("winnerImg").src = player2Character.src
