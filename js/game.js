@@ -81,6 +81,13 @@ function game() {
                     ifDiceRolledSix();
                 }
 
+                function playerHitRed(){
+
+                    if (scores[activePlayer] == penaltyTiles.includes(scores[activePlayer]){
+                        scores[activePlayer] -= 
+                    }
+                }
+
                 function smallerCharactersOnSameTile() {
                     if (scores[1] == scores[0]) {
                         setPlayerImg();
