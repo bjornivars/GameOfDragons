@@ -81,12 +81,14 @@ function game() {
                     ifDiceRolledSix();
                 }
 
+
                 function playerHitRed(){
 
-                    if (scores[activePlayer] == penaltyTiles.includes(scores[activePlayer]){
-                        scores[activePlayer] -= 
+                    if (scores[activePlayer] == penaltyTiles.includes(scores[activePlayer])){
+                        console.log("fack");
+                        console.log(trap.tileId);
                     }
-                }
+                } playerHitRed();
 
                 function smallerCharactersOnSameTile() {
                     if (scores[1] == scores[0]) {
@@ -126,5 +128,4 @@ function nextPlayer() {
     }
     diceRollScore = 0;
 }
-
 
