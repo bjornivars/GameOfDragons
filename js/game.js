@@ -84,9 +84,9 @@ function game() {
 
                 function playerHitRed(){
 
-                    if (scores[activePlayer] == penaltyTiles.includes(scores[activePlayer])){
-                        console.log("fack");
-                        console.log(trap.tileId);
+                    if (f) {
+                    }else{
+                        console.log("fuck")
                     }
                 } playerHitRed();
 
@@ -128,4 +128,8 @@ function nextPlayer() {
     }
     diceRollScore = 0;
 }
+
+
+
+
 

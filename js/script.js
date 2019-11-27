@@ -13,6 +13,7 @@ function activeClass() {
         document.getElementById("player2Name").classList.add("disabled");
     } else {
         document.getElementById("player2Name").classList.add("active");
+        document.getElementById("player2Name").classList.remove("disabled");
         document.getElementById("player1Name").classList.remove("active");
         document.getElementById("player1Name").classList.add("disabled");
     }
