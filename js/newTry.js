@@ -2,28 +2,30 @@ let player1 = {
     tile: 0, 
     id: 1,
     playerName: sessionStorage.getItem('player1'),
-    player1Character: document.getElementById("player1img"),
-    turn: true,
+    character: document.getElementById("player1img"),
 }
 let player2 = {
     tile: 0, 
     id: 2,
     playerName: sessionStorage.getItem('player2'),
-    player2Character: document.getElementById("player2img"),
-    turn: false,
+    character: document.getElementById("player2img"),
 }
 
-let playerActive = {};
 
+// TODO: make order of starting player random 
+let player1Active = true;
+
+// Set images to the players
 function setPlayerImg() {
-    player1.player1Character.src = "graphics/img/icons/" + player1.playerName + ".png";
-    player2.player2Character.src = "graphics/img/icons/" + player2.playerName + ".png";
+    player1.character.src = "graphics/img/icons/" + player1.playerName + ".png";
+    player2.character.src = "graphics/img/icons/" + player2.playerName + ".png";
 } setPlayerImg();
 
 
 function game(){
+    // DICE
     let dice = Math.floor(Math.random() * 6) + 1;
-    console.log(dice);
+    console.log("Dice shows " + dice);
     var diceDOM = document.querySelector('.dice');
     // Spin the dice
     if (diceDOM.classList.contains('rotate')) {
@@ -31,44 +33,55 @@ function game(){
     } else {
         diceDOM.classList.add('rotate');
     }
-    //2. Display the result in DOM
+    // 2. Display the result in DOM (meta programming)
     setTimeout(function () {
         diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png';
     }, 250);
 
+    // give score to correct player
+    if(player1Active){
+        player1.tile += dice;
+        // check if current tile is a trap
 
-
-    if(player1.turn){
-        playerActive = player1;
+        // player1.tile = checkTrap(player1.tile);
+        checkWinner(player1.tile);
+        // https://www.geeksforgeeks.org/html-dom-appendchild-method/
+        document.getElementById(player1.tile.toString()).appendChild(player1.character);
     }else{
-        playerActive = player2;
-    }
+        player2.tile += dice;
+        //player2.tile = checkTrap(player2.tile);
+        checkWinner(player2.tile);
+        document.getElementById(player2.tile.toString()).appendChild(player2.character);
 
+    }
+    
+    // toggle player if dice is not 6
     if(dice !== 6){
-        playerActive.tile = playerActive.tile + dice;
-        console.log(playerActive);
-        nextPlayer();
+        player1Active = !player1Active;
+    }
+    
+    
+    // DEBUG 
+    console.log(player1.tile + " vs " + player2.tile);
+}
+
+function moveCharacterToTile(player, tile){
+
+    if(player){
+        document.getElementById(tile).appendChild(player1.character.src);
     }else{
-        playerActive.tile = playerActive.tile + dice;
-        console.log(playerActive);
+        document.getElementById(tile).appendChild(player2.character.src);
     }
-
-
-
-
-
 
 }
 
-function nextPlayer(){
-    if(playerActive === player1.turn){
-        player1.turn == false;
-        player2.turn == true;
-    }else{        
-        player1.turn == true;
-        player2.turn == false;
-    }
-}
+
+
+
+
+
+
+
 
 
 
