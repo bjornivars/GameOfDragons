@@ -1,5 +1,5 @@
 // some variables
-let dice, diceRoll, scores, activePlayer, player1Character, player2Character;
+let diceRoll, scores, activePlayer, player1Character, player2Character;
 scores = [0, 0];
 activePlayer = 0;
 diceRollScore = 0;
@@ -41,94 +41,41 @@ function game() {
                 diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png';
             }, 250);
 
-
             if (dice) {
                 //Add score
                 diceRollScore = dice;
                 scores[activePlayer] += diceRollScore;
                 console.log("player 1: " + scores[0]);
                 console.log("player 2: " + scores[1]);
-
-                // If dice rolled a 6, dont change the activePlayer as the same player gets another roll
-                function ifDiceRolledSix() {
-                    if (diceRollScore == 6) {
-                        activePlayer;
-                    }
-                    // Change the player if anything else than 6 is rolled
-                    else {
-                        nextPlayer();
-                    }
-                }
-
+        
                 if (scores[0] == scores[activePlayer]) {
                     setPlayerImg();
                     winner();
+                    player1HitRed();
                     let x = scores[0].toString();
-                    console.log(x);
-                    let y = document.getElementById(x);
-                    console.log(y);
+            //        console.log(x);
+            //        console.log(y);
                     // Place player 1 om the correct tile according to his/hers score
-                    let player1Placement = document.getElementById(x).appendChild(player1Character);
+                    document.getElementById(x).appendChild(player1Character);
                     ifDiceRolledSix();
                 } else {
-                    console.log("player2 turn");
+            //        console.log("player2 turn");
                     setPlayerImg();
                     winner();
+                    player2HitRed();
                     let x = scores[1].toString();
-                    let y = document.getElementById(x);
-                    console.log(y);
-                    let player2Placement = document.getElementById(x).appendChild(player2Character);
+            //        console.log(y);
+                    document.getElementById(x).appendChild(player2Character);
                     ifDiceRolledSix();
                 }
-
-
-                function playerHitRed(){
-
-                    if (f) {
-                    }else{
-                        console.log("fuck")
-                    }
-                } playerHitRed();
-
-                function smallerCharactersOnSameTile() {
-                    if (scores[1] == scores[0]) {
-                        setPlayerImg();
-                        player1Character.style.width = "48%";
-                        player2Character.style.width = "48%";
-                    } else {
-                        setPlayerImg();
-                        player1Character.style.width = "100%";
-                        player2Character.style.width = "100%";
-                    }
-
-                } smallerCharactersOnSameTile();
-                function winner() {
-                    if (scores[0] >= 34) {
-                        setPlayerImg();
-                        $('#winnerGameModal').modal('show');
-                        document.getElementById("winnerImg").src = player1Character.src
-                    } else if (scores[1] >= 34) {
-                        setPlayerImg();
-                        $('#winnerGameModal').modal('show');
-                        document.getElementById("winnerImg").src = player2Character.src
-                    }
-                }
+                smallerCharactersOnSameTile();
+                winner();
             }
         }
     });
 }
 game();
-
-function nextPlayer() {
-    //Next player
-    if (activePlayer === 0) {
-        activePlayer = 1;
-    } else {
-        activePlayer = 0;
-    }
-    diceRollScore = 0;
-}
-
+nextPlayer();
 
 
 
