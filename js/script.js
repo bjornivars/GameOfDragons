@@ -27,6 +27,7 @@ function setCorrectPlayerUrl(characterId) {
         console.log("player1 " + player1Character);
         if (confirm('Are you sure you want to be this character?')) {
             sessionStorage.setItem("player1", characterId);
+            document.getElementById("card" + characterId).style.padding = "12px";
             document.getElementById("card" + characterId).style.border = "2px solid #4549B1";
             player1Active = false;
             activeClass();
@@ -36,6 +37,7 @@ function setCorrectPlayerUrl(characterId) {
         console.log("player2 " + player2Character);
         if (confirm('Are you sure you want to be this character?')) {
             sessionStorage.setItem("player2", characterId);
+            document.getElementById("card" + characterId).style.padding = "12px";
             document.getElementById("card" + characterId).style.border = "2px solid #4DB145";
         }
         if (sessionStorage.getItem("player1") && sessionStorage.getItem("player2")) {
