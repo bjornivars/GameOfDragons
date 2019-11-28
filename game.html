@@ -37,26 +37,24 @@
 <div class="row d-flex justify-contetnt-between">
     <div class=" [ sidecontent col-md-2 ] ">
       <div class=" [ row ] ">
-        <div class=" [ players d-flex justify-content-between col-md-12 ] ">
-          <div class="[ players-box col-md-5 ]" id="player1">
+        <div class=" [ players d-flex justify-content-between col-md-12 square-yellow ] ">
+          <div class="[ players-box col-md-5 no-gutters ]" id="player1">
             <img src="" class="players-box_img" alt="player 1" id="player1img">
-            <h2 class="players-box-h2">  </h2>
-            <p id="cardText"></p>
           </div>
 
-          <div class=" [ players-box col-md-5 ] " >
+          <div class=" [ players-box col-md-5 no-gutters ] " >
             <img src="" class="players-box_img" alt="player 2" id="player2img">
             <h2 class="players-box-h2">  </h2>
           </div>
         </div>
       </div>
-      <h3 id="playerTurn">Plyer who?</h3>
+      <h3 id="playerWho">Plyer who?</h3>
       <img src="graphics/img/dice/dice-5.png" alt="Dice" class="dice col-md-8" id="dice-1">
         <button class="btn-roll" id="roll" onclick="game()"><i class="ion-ios-loop" ></i>Roll dice</button>
     </div>
 
-        <div class="col-md-10">
-          <div class="row d-flex">
+        <div class="col-md-10 boardTiles">
+          <div class="row d-flex rowtile">
             <div class="col-md-1 square " id="1">1<br></div>
             <div class="col-md-1 square " id="2">2<br>
             </div>
@@ -69,10 +67,10 @@
             <div class="col-md-1 square " id="8">8<br>
             </div>
           </div>
-          <div class="row d-flex">
+          <div class="row d-flex rowtile">
               <div class="offset-md-7 col-md-1 square " id="9">9<br></div>
            </div>
-           <div class="row d-flex">
+           <div class="row d-flex rowtile">
               <div class="col-md-1 square " id="17">17<br></div>
               <div class="col-md-1 square "  id="16">16<br></div>
               <div class="col-md-1 square " id="15">15<br>
@@ -83,10 +81,10 @@
               <div class="col-md-1 square " id="11">11<br></div>
               <div class="col-md-1 square " id="10">10<br></div>
             </div>
-            <div class="row d-flex">
+            <div class="row d-flex rowtile">
                 <div class=" col-md-1 square " id="18">18<br></div>
              </div>
-             <div class="row d-flex">
+             <div class="row d-flex rowtile">
                 <div class="col-md-1 square red " id="19">19<br> 
                 </div>
                 <div class="offset-md-1 col-md-1 square " id="25">25<br></div>
@@ -95,13 +93,13 @@
                 <div class="offset-md-2 col-md-1 square " id="34">34<br></div>
 
              </div>
-             <div class="row d-flex">
+             <div class="row d-flex rowtile" >
                 <div class="col-md-1 square " id="20">20<br></div>
                 <div class="offset-md-1 col-md-1 square " id="24">24<br></div>
                 <div class="offset-md-1 col-md-1 square " id="28">28<br></div>
                 <div class="offset-md-2 col-md-1 square " id="33">33<br></div>
              </div>
-             <div class="row d-flex">
+             <div class="row d-flex rowtile">
 
                 <div class="col-md-1 square " id="21">21<br></div>
                 <div class="col-md-1 square " id="22">22<br></div>

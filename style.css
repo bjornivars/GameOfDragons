@@ -98,6 +98,9 @@ body {
   height: 75px;
   border: 3px solid white;
 }
+.square-yellow {
+  border: 3px solid #FDB62F;
+}
 
 .red {
   background-color: red;
@@ -149,6 +152,14 @@ body {
 
 .modal-backdrop.show {
   opacity: 0.75;
+}
+
+.rowtile {
+  margin-left: 5em;
+}
+
+.no-gutters {
+  padding: 0;
 }
 
 .navbar {
