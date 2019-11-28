@@ -27,6 +27,7 @@ function setCorrectPlayerUrl(characterId) {
         console.log("player1 " + player1Character);
         if (confirm('Are you sure you want to be this character?')) {
             sessionStorage.setItem("player1", characterId);
+            document.getElementById("card" + characterId).style.border = "2px solid #4549B1";
             player1Active = false;
             activeClass();
         }
@@ -35,6 +36,7 @@ function setCorrectPlayerUrl(characterId) {
         console.log("player2 " + player2Character);
         if (confirm('Are you sure you want to be this character?')) {
             sessionStorage.setItem("player2", characterId);
+            document.getElementById("card" + characterId).style.border = "2px solid #4DB145";
         }
         if (sessionStorage.getItem("player1") && sessionStorage.getItem("player2")) {
             console.log("nice");
@@ -47,8 +49,7 @@ sessionStorage.clear();
 // if the player clicks an image, take that image id, and 
 // setCorrectPlayerUrl to have the id of the character so you get a full url
 function choosePlayer(clicked) {
-    player1Character = clicked;
-    switch (player1Character) {
+    switch (clicked) {
         // if the player clicks on "selectJon" image, give setCorrectPlayerUrl the paramater of 583, which is Jon´s url ending
         case "selectJon":
             setCorrectPlayerUrl("583");
@@ -80,9 +81,6 @@ function choosePlayer(clicked) {
         case "selectTyrion":
             setCorrectPlayerUrl("1052");
             break;
-        // Set defult to empty string
-        default:
-            player1Character = "";
     }
 }
 
