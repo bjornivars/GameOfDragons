@@ -14,7 +14,7 @@
 
         <nav class="navbar navbar-expand-md">
             <div class="mx-auto order-0">
-                <a class="navbar-brand mx-auto" href="#">Game of Dragons</a>
+                <a class="navbar-brand mx-auto" href="introSite.html">Game of Dragons</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,18 +40,23 @@
         <div class=" [ players d-flex justify-content-between col-md-12 square-yellow ] ">
           <div class="[ players-box col-md-5 no-gutters ]" id="player1">
             <img src="" class="players-box_img" alt="player 1" id="player1img">
+            <p class=" [ text-center ] ">Player 1</p>
           </div>
 
           <div class=" [ players-box col-md-5 no-gutters ] " >
             <img src="" class="players-box_img" alt="player 2" id="player2img">
-            <h2 class="players-box-h2">  </h2>
+            <p class=" [ text-center ] ">Player 2</p>
           </div>
         </div>
       </div>
-      <h3 id="playerWho">Plyer who?</h3>
-      <img src="graphics/img/dice/dice-5.png" alt="Dice" class="dice col-md-8" id="dice-1">
-        <button class="btn-roll" id="roll" onclick="game()"><i class="ion-ios-loop" ></i>Roll dice</button>
+      <div class=" [ row mt-5 ] ">
+      <h3 class="[ col-md-12 text-center ]" id="playerWho"></h3>
     </div>
+    <div class=" [ row text-center ] ">
+      <img src="graphics/img/dice/dice-5.png" alt="Dice" class="dice col-md-8" id="dice-1">
+        <button class="btn-roll col-md-12 mt-3" id="roll" onclick="game()"><i class="ion-ios-loop" ></i>Roll dice</button>
+      </div>
+      </div>
 
         <div class="col-md-10 boardTiles">
           <div class="row d-flex rowtile">

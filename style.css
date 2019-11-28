@@ -23,6 +23,7 @@ body {
 .container {
   padding-top: 4em;
   padding-bottom: 6em;
+  min-height: 100vh;
 }
 .container-quote {
   width: 100%;
@@ -65,7 +66,7 @@ body {
 .player-1-circle {
   height: 25px;
   width: 25px;
-  background-color: #4549B1;
+  background-color: red;
   border-radius: 50%;
   display: inline-block;
   margin-right: 0.8em;
@@ -73,7 +74,7 @@ body {
 .player-2-circle {
   height: 25px;
   width: 25px;
-  background-color: #4DB145;
+  background-color: blue;
   border-radius: 50%;
   display: inline-block;
   margin-right: 1em;
@@ -100,6 +101,7 @@ body {
 }
 .square-yellow {
   border: 3px solid #FDB62F;
+  min-height: 75px;
 }
 
 .red {
@@ -129,6 +131,7 @@ body {
 .dice {
   transition: all 0.75s 0.25s;
   transform: rotate(0);
+  margin: auto;
 }
 
 .rotate {
@@ -146,12 +149,23 @@ body {
 .largeStartButton {
   padding: 50px;
   text-align: center;
-  background-color: green;
+  background-color: #3B6A00;
+  color: white;
+}
+.largeStartButton:hover {
+  background-color: #284603;
   color: white;
 }
 
 .modal-backdrop.show {
   opacity: 0.75;
+}
+
+.btn-roll {
+  width: 100%;
+  background-color: #3B6A00;
+  color: white;
+  border: 1px solid #3B6A00;
 }
 
 .rowtile {
@@ -169,8 +183,13 @@ body {
   color: black;
 }
 
+.flameBtn {
+  margin-top: 6em;
+}
+
 .firebox {
   color: red;
+  font-size: 2em;
 }
 .firebox:hover {
   color: #ff6c6c;
