@@ -13,7 +13,7 @@ function checkTrap(tile){
         case 26:
             alert( "Tou just got pushed out of the window. Move back 3 steps")
             return tile - 3;
-        case 35:
+        case 32:
             alert( "Tou just got pushed out of the window. Move back 20 steps")
             return tile - 20;
         default:
@@ -27,9 +27,11 @@ function checkWinner(tile) {
         setPlayerImg();
         $('#winnerGameModal').modal('show');
         if(player1Active){
+            document.getElementById("winnerName").innerHTML = "Player 1";
             document.getElementById("winnerImg").src = player1.character.src;
             console.log("player 1 WINS");
         }else {
+            document.getElementById("winnerName").innerHTML = "Player 2";
             document.getElementById("winnerImg").src = player2.character.src;
             console.log("player 2 WINS");
         }

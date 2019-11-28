@@ -195,6 +195,15 @@ body {
   color: #ff6c6c;
 }
 
+.hide1 {
+  display: none;
+}
+
+.show1 {
+  display: block;
+  margin-top: 6em;
+}
+
 /*
 body, html {height:100%;}
 

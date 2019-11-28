@@ -47,13 +47,13 @@ function game(){
         checkWinner(player1.tile);
         // https://www.geeksforgeeks.org/html-dom-appendchild-method/
         document.getElementById(player1.tile.toString()).appendChild(player1.character);
+
     }else{
         document.getElementById("playerWho").innerHTML = "Player 1";
         player2.tile += dice;
         player2.tile = checkTrap(player2.tile);
         checkWinner(player2.tile);
         document.getElementById(player2.tile.toString()).appendChild(player2.character);
-
     }
     // Make characters smaller if on same tile
     smallerCharactersOnSameTile();
