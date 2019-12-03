@@ -41,35 +41,35 @@ function confirmDeny(clicked){
     let splitClicked = clicked.split("-");
     let decision = splitClicked[0];
     let characterId = splitClicked[1];
-    console.log(splitClicked);
+    let cardCharacterId = document.getElementById("card" + characterId); 
+    let changeConfirmId = document.getElementById("confirm-" + characterId);
+    let changeDenyId = document.getElementById("deny-" + characterId);
+
     if(decision == "confirm"){
-        console.log("yeah");
         if(player1Active){
             sessionStorage.setItem("player1", characterId);
-            document.getElementById("card" + characterId).style.padding = "12px";
-            document.getElementById("card" + characterId).style.border = "2px solid red";
-            document.getElementById("confirm-" + characterId).id = ("confirm");
-            document.getElementById("deny-" + characterId).id = ("deny");
+            cardCharacterId.style.padding = "12px";
+            cardCharacterId.style.border = "2px solid red";
+            changeConfirmId.id = ("confirm");
+            changeDenyId.id = ("deny");
             $('#confirmModal').modal('hide');
             player1Active = false;
             activeClass();
-        }else{
+        } else {
             sessionStorage.setItem("player2", characterId);
-            document.getElementById("card" + characterId).style.padding = "12px";
-            document.getElementById("card" + characterId).style.border = "2px solid blue";
-            document.getElementById("confirm-" + characterId).id = ("confirm");
-            document.getElementById("deny-" + characterId).id = ("deny");
+            cardCharacterId.style.padding = "12px";
+            cardCharacterId.style.border = "2px solid blue";
+            changeConfirmId.id = ("confirm");
+            changeDenyId.id = ("deny");
             $('#confirmModal').modal('hide');
             if (sessionStorage.getItem("player1") && sessionStorage.getItem("player2")) {
-                console.log("nice");
                 $('#startGameModal').modal('show');
             } 
         }
-    }else{
-        console.log("nope");
+    } else {
         console.log(characterId);
-        document.getElementById("confirm-" + characterId).id = ("confirm");
-        document.getElementById("deny-" + characterId).id = ("deny");
+        changeConfirmId.id = ("confirm");
+        changeDenyId.id = ("deny");
         $('#confirmModal').modal('hide');
     }
 }
