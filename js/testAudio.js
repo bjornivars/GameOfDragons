@@ -1,9 +1,10 @@
 
-
+// Start song and show start play
 window.onload=function()  //executes when the page finishes loading
 {
-    document.getElementById("my_audio").play();
-	setTimeout(func1, 5000);  //sets a timer which calls function func1 after 2,000 milliseconds = 2 secs.
+    document.getElementById("myAudio").play();
+    this.testMute();
+	setTimeout(func1, 4000);  //sets a timer which calls function func1 after 2,000 milliseconds = 2 secs.
 	
 };
 function func1()
@@ -58,3 +59,16 @@ function update()
     }
 }
 setInterval(update,1000);
+
+
+
+var audio = document.getElementById('myAudio');
+
+function testMute(){
+document.getElementById('mute').addEventListener('click', function (e)
+{
+    e = e || window.event;
+    audio.muted = !audio.muted;
+    e.preventDefault();
+}, false);
+}

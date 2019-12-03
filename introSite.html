@@ -8,20 +8,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <audio id="my_audio" src="audio/soundTrack.mp3" loop="loop"></audio>
+    <audio id="myAudio" loop="loop">
+            <source src="audio/soundTrack.mp3" />
+    </audio>
     <div class="bg-dragonWolf intro ">
         <div class="container ">
                 <div class=" [ container-quote ] ">
-                <q class=" [ container-quote-text ] ">“ I will take what is mine with fire and blood. ”</q>
+                <q class=" [ container-quote-text ] "> I will take what is mine with fire and blood. </q>
                     <p>— Daenerys Targaryen</p>
                     <div class=" hide1 flameBtn " id="startGame">
                         <a href="index.html" class="firebox">Start Game</a>
                     </div>
+                    <a href="#noscroll" id="mute"><i class="fas fa-volume-mute"></i></a>
+
                 </div>
         </div>
     </div>
+
 
     <script src="js/testAudio.js"></script>
 </body>

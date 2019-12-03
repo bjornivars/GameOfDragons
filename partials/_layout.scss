@@ -6,10 +6,16 @@ body{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Cormorant Infant', serif;
 }
 
 
-
+h1{
+    font-family: sans-serif;
+}
+h2{
+    font-family: sans-serif;
+}
 .bg-dragonWolf{
     // background: url("graphics/img/dragonWolf.jpg");
     background-color: black;
@@ -121,7 +127,7 @@ body{
     border: 3px solid white;
     &-yellow{
         border: 3px solid #FDB62F;
-        min-height: 75px;
+        min-height: 110px;
     }
 }
 
@@ -191,11 +197,27 @@ opacity: .75;
     border: 1px solid #3B6A00;
 }
 
+.yellowBorder{
+    border-bottom: 3px solid #FDB62F;
+}
 
 
 
-
-
+.winnerGame{
+    &-container{
+        width: 80%;
+        margin: auto;
+        &-header{
+            width: 80%;
+            padding-top: 2em;
+            margin: auto;
+            border-bottom: 3px solid #FDB62F;
+        }
+        &-player{
+            padding-top: 1em;
+        }
+    }
+}
 
 
 

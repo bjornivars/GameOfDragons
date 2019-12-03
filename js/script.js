@@ -25,27 +25,55 @@ function setCorrectPlayerUrl(characterId) {
     if (player1Active) {
         player1Character = apiUrl + characterId;
         console.log("player1 " + player1Character);
-        if (confirm('Are you sure you want to be this character?')) {
-            sessionStorage.setItem("player1", characterId);
-            document.getElementById("card" + characterId).style.padding = "12px";
-            document.getElementById("card" + characterId).style.border = "2px solid red";
-            player1Active = false;
-            activeClass();
-        }
+        $('#confirmModal').modal('show'); // Show confirm modal
+        document.getElementById("confirm").id = ("confirm-" + characterId); // Change id of "confirm"
+        document.getElementById("deny").id = ("deny-" + characterId); // Change id of "deny"
     } else {
         player2Character = apiUrl + characterId;
         console.log("player2 " + player2Character);
-        if (confirm('Are you sure you want to be this character?')) {
+        $('#confirmModal').modal('show'); 
+        document.getElementById("confirm").id = ("confirm-" + characterId);
+        document.getElementById("deny").id = ("deny-" + characterId);
+    }
+}
+
+function confirmDeny(clicked){
+    let splitClicked = clicked.split("-");
+    let decision = splitClicked[0];
+    let characterId = splitClicked[1];
+    console.log(splitClicked);
+    if(decision == "confirm"){
+        console.log("yeah");
+        if(player1Active){
+            sessionStorage.setItem("player1", characterId);
+            document.getElementById("card" + characterId).style.padding = "12px";
+            document.getElementById("card" + characterId).style.border = "2px solid red";
+            document.getElementById("confirm-" + characterId).id = ("confirm");
+            document.getElementById("deny-" + characterId).id = ("deny");
+            $('#confirmModal').modal('hide');
+            player1Active = false;
+            activeClass();
+        }else{
             sessionStorage.setItem("player2", characterId);
             document.getElementById("card" + characterId).style.padding = "12px";
             document.getElementById("card" + characterId).style.border = "2px solid blue";
+            document.getElementById("confirm-" + characterId).id = ("confirm");
+            document.getElementById("deny-" + characterId).id = ("deny");
+            $('#confirmModal').modal('hide');
+            if (sessionStorage.getItem("player1") && sessionStorage.getItem("player2")) {
+                console.log("nice");
+                $('#startGameModal').modal('show');
+            } 
         }
-        if (sessionStorage.getItem("player1") && sessionStorage.getItem("player2")) {
-            console.log("nice");
-            $('#startGameModal').modal('show');
-        }
+    }else{
+        console.log("nope");
+        console.log(characterId);
+        document.getElementById("confirm-" + characterId).id = ("confirm");
+        document.getElementById("deny-" + characterId).id = ("deny");
+        $('#confirmModal').modal('hide');
     }
 }
+
 sessionStorage.clear();
 
 // if the player clicks an image, take that image id, and 
@@ -134,3 +162,10 @@ function characterInfo_click(clicked) {
     }
     event.preventDefault();
 }
+
+
+
+
+
+
+

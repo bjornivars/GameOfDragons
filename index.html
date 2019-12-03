@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-        <audio id="my_audio" src="audio/soundTrack.mp3" loop="loop"></audio>
-
+        <audio id="myAudio" loop="loop">
+                <source src="audio/soundTrack.mp3" />
+        </audio>
     <nav class="navbar navbar-expand-md">
         <div class="mx-auto order-0">
             <a class="navbar-brand mx-auto" href="introSite.html">Game of Dragons</a>
@@ -27,6 +31,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Rules</a>
                 </li>
+                <li class="nav-item">
+                        <a href="#noscroll" id="mute"><i class="fas fa-volume-mute"></i></a>
+                      </li>
             </ul>
         </div>
     </nav>
@@ -134,7 +141,16 @@
         <!--/modal-->
 
 
-
+                <!-- Confirm Modal -->
+                <div class="modal  fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content ">
+                                <button id="deny" onclick="confirmDeny(this.id)" >Nope</button>
+                                <button id="confirm" onclick="confirmDeny(this.id)">YEAH!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/modal-->
 
                 <!-- START GAME Modal -->
                 <div class="modal  fade" id="startGameModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -154,7 +170,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-    <script src="js/testAudio.js"></script>
+   <!--<script src="js/testAudio.js"></script>--> 
 <script>
 
 </script>
