@@ -5,7 +5,6 @@ let player2Character = "";
 let player1Active = true;
 
 // Gives CSS styling to the active and disabled player
-
 function activeClass() {
     if (player1Active) {
         document.getElementById("player1Name").classList.add("active");
@@ -23,7 +22,7 @@ activeClass();
 // Set the correct URL to the current players choice of character
 function setCorrectPlayerUrl(characterId) {
     if (player1Active) {
-        player1Character = apiUrl + characterId;
+        player1Character = apiUrl + characterId; // Creates an url with correct id 
         console.log("player1 " + player1Character);
         $('#confirmModal').modal('show'); // Show confirm modal
         document.getElementById("confirm").id = ("confirm-" + characterId); // Change id of "confirm"
@@ -37,36 +36,37 @@ function setCorrectPlayerUrl(characterId) {
     }
 }
 
+// Optiond for the confirm/deny buttons
 function confirmDeny(clicked){
-    let splitClicked = clicked.split("-");
-    let decision = splitClicked[0];
+    let splitClicked = clicked.split("-"); // Remove the "-" from id name and creates ["confirm", "id"]
+    let decision = splitClicked[0]; 
     let characterId = splitClicked[1];
     let cardCharacterId = document.getElementById("card" + characterId); 
     let changeConfirmId = document.getElementById("confirm-" + characterId);
     let changeDenyId = document.getElementById("deny-" + characterId);
 
-    if(decision == "confirm"){
-        if(player1Active){
-            sessionStorage.setItem("player1", characterId);
-            cardCharacterId.style.padding = "12px";
-            cardCharacterId.style.border = "2px solid red";
-            changeConfirmId.id = ("confirm");
-            changeDenyId.id = ("deny");
-            $('#confirmModal').modal('hide');
-            player1Active = false;
-            activeClass();
+    if(decision == "confirm"){ // Check if confirmed is clicked
+        if(player1Active){ 
+            sessionStorage.setItem("player1", characterId); // Send player1 id to sessionstorage
+            cardCharacterId.style.padding = "12px"; // Add padding to selected player1 character
+            cardCharacterId.style.border = "2px solid red"; // Add border to selected player1 character
+            changeConfirmId.id = ("confirm"); // Change confirm button id back to "confirm"
+            changeDenyId.id = ("deny"); // Change deny button id back to "deny"
+            $('#confirmModal').modal('hide'); // Hide modal
+            player1Active = false; // Set player1 to false, so player2 is active
+            activeClass(); // Change active player visually
         } else {
-            sessionStorage.setItem("player2", characterId);
-            cardCharacterId.style.padding = "12px";
-            cardCharacterId.style.border = "2px solid blue";
-            changeConfirmId.id = ("confirm");
-            changeDenyId.id = ("deny");
-            $('#confirmModal').modal('hide');
+            sessionStorage.setItem("player2", characterId); // Send player2 id to sessionstorage
+            cardCharacterId.style.padding = "12px"; // Padding
+            cardCharacterId.style.border = "2px solid blue"; // Border
+            changeConfirmId.id = ("confirm"); // Change confirm button id back to "confirm"
+            changeDenyId.id = ("deny"); // Change deny button id back to "deny"
+            $('#confirmModal').modal('hide'); // Hide modal
             if (sessionStorage.getItem("player1") && sessionStorage.getItem("player2")) {
-                $('#startGameModal').modal('show');
+                $('#startGameModal').modal('show'); // Show start game modal if both players has selected
             } 
         }
-    } else {
+    } else { // The active player chooses again as "No" is clicked
         console.log(characterId);
         changeConfirmId.id = ("confirm");
         changeDenyId.id = ("deny");
@@ -82,34 +82,34 @@ function choosePlayer(clicked) {
     switch (clicked) {
         // if the player clicks on "selectJon" image, give setCorrectPlayerUrl the paramater of 583, which is Jon´s url ending
         case "selectJon":
-            setCorrectPlayerUrl("583");
+            setCorrectPlayerUrl("583"); // This is where the characterId is passed in
             break;
         case "selectSansa":
-            setCorrectPlayerUrl("957");
+            setCorrectPlayerUrl("957"); // This is where the characterId is passed in
             break;
         case "selectEddard":
-            setCorrectPlayerUrl("339");
+            setCorrectPlayerUrl("339"); // This is where the characterId is passed in
             break;
         case "selectArya":
-            setCorrectPlayerUrl("148");
+            setCorrectPlayerUrl("148"); // This is where the characterId is passed in
             break;
         case "selectDaenerys":
-            setCorrectPlayerUrl("271");
+            setCorrectPlayerUrl("271"); // This is where the characterId is passed in
             break;
         case "selectCersei":
-            setCorrectPlayerUrl("238");
+            setCorrectPlayerUrl("238"); // This is where the characterId is passed in
             break;
         case "selectJaime":
-            setCorrectPlayerUrl("529");
+            setCorrectPlayerUrl("529"); // This is where the characterId is passed in
             break;
         case "selectJoffrey":
-            setCorrectPlayerUrl("565");
+            setCorrectPlayerUrl("565"); // This is where the characterId is passed in
             break;
         case "selectBrandon":
-            setCorrectPlayerUrl("206");
+            setCorrectPlayerUrl("206"); // This is where the characterId is passed in
             break;
         case "selectTyrion":
-            setCorrectPlayerUrl("1052");
+            setCorrectPlayerUrl("1052"); // This is where the characterId is passed in
             break;
     }
 }
