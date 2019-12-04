@@ -3,6 +3,8 @@ GameOfThrones INFO LOG:
 
 Difficulties along the way:
   - Api did not give an id to EASILY find character. 
+  - I fucked up with too many shortcuts which resulted with me having to start over.
+  - Spaghetti code
 
 
 
