@@ -1,20 +1,27 @@
+var trapText = document.getElementById("trapText");
 // Check if current tile is a trap
 function checkTrap(tile){
     switch (tile) {
         case 4:
-            alert( "Tou just got pushed out of the window. Move back 2 steps")
+            showTrapModal();
+            trapText.innerHTML = "You just got pushed out of the window. Move back 2 steps";
+            // alert( "You just got pushed out of the window. Move back 2 steps")
             return tile - 2;
         case 12:
-            alert( "Tou just got pushed out of the window. Move back 3 steps")
+            showTrapModal();
+            trapText.innerHTML = "Khal Drogo just raped you :( 3 steps back";
             return tile - 3;
         case 19:
-            alert( "Tou just got pushed out of the window. Move back 5 steps")
+            showTrapModal();
+            trapText.innerHTML = "Hodor is holding the door shut. Move back 5 steps";
             return tile - 5;
         case 26:
-            alert( "Tou just got pushed out of the window. Move back 3 steps")
+            showTrapModal();
+            trapText.innerHTML = "Cersei blew up the city... 3 steps back";
             return tile - 3;
         case 32:
-            alert( "Tou just got pushed out of the window. Move back 20 steps")
+            showTrapModal();
+            trapText.innerHTML = "You lost a battle.... Move back 20 steps";
             return tile - 20;
         default:
             return tile;
@@ -36,4 +43,15 @@ function checkWinner(tile) {
             console.log("player 2 WINS");
         }
     }
+}
+
+//
+function showTrapModal(){
+    $('#trapModal').modal('show');
+}
+
+// Close the trap modal
+function closeTrapModal(){
+    console.log("egm");
+$('#trapModal').modal('hide');
 }
