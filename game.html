@@ -1,189 +1,232 @@
 <!DOCTYPE html>
-<html lang="en"> 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GamePlay</title>
-        <meta name="description" content="Game of Thrones Boardgame created with HTML5 and socket.io, Choose a GOT symbol and play against friends online.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant&display=swap" rel="stylesheet">
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GamePlay</title>
+    <meta name="description" content="Game of Thrones Boardgame created with HTML5 and socket.io, Choose a GOT symbol and play against friends online.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <audio id="myAudio" loop="loop">
-            <source src="audio/soundTrack.mp3" />
+<body>
+    <audio id="myAudio" loop="loop">
+        <source src="audio/soundTrack.mp3" />
     </audio>
 
-        <nav class="navbar navbar-expand-md">
-            <div class="mx-auto order-0">
-                <a class="navbar-brand mx-auto" href="introSite.html">Game of Dragons</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Rules</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#noscroll" id="mute"><i class="fas fa-volume-mute"></i></a>
-                      </li>
-                </ul>
-            </div>
-        </nav>
-
-      <div class=" [ bg-throne ] ">
-      <!--Container-->
-      <div class="container">
-        <div id="testSession"></div>
-        <div id="testSession2"></div>
-
-<div class="row d-flex justify-contetnt-between">
-    <div class=" [ sidecontent col-md-2 ] ">
-      <div class=" [ row ] ">
-        <div class=" [ players d-flex justify-content-between col-md-12 square-yellow ] ">
-          <div class="[ players-box col-md-5 no-gutters ]" id="player1">
-            <img src="" class="players-box_img" alt="player 1" id="player1img">
-            <p class=" [ text-center ] ">Player 1</p>
-          </div>
-
-          <div class=" [ players-box col-md-5 no-gutters ] " >
-            <img src="" class="players-box_img" alt="player 2" id="player2img">
-            <p class=" [ text-center ] ">Player 2</p>
-          </div>
+    <nav class=" [ navbar navbar-expand-md ] ">
+        <div class=" [ mx-auto order-0 ] ">
+            <a class=" [ navbar-brand mx-auto ] " href="introSite.html">Game of Dragons</a>
+            <button class=" [ navbar-toggler ] " type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class=" [ navbar-toggler-icon ] "></span>
+            </button>
         </div>
-      </div>
-      <div class=" [ row mt-5 ] ">
-      <h3 class="[ col-md-12 text-center ]" id="playerWho"></h3>
-    </div>
-    <div class=" [ row text-center ] ">
-      <img src="graphics/img/dice/dice-5.png" alt="Dice" class="dice col-md-8" id="dice-1">
-        <button class="btn-roll col-md-12 mt-3" id="roll" onclick="game()"><i class="ion-ios-loop" ></i>Roll dice</button>
-      </div>
-      </div>
+        <div class=" [ navbar-collapse collapse w-100 order-3 dual-collapse2 ] ">
+            <ul class=" [ navbar-nav ml-auto ] ">
+                <li class=" [ nav-item ] ">
+                    <a class=" [ nav-link ] " href="#">Rules</a>
+                </li>
+                <li class=" [ nav-item ] ">
+                    <a href="#noscroll" id="mute"><i class=" [ fas fa-volume-mute ] "></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-        <div class="col-md-10 boardTiles">
-          <div class="row d-flex rowtile">
-            <div class="col-md-1 square " id="1">1<br></div>
-            <div class="col-md-1 square " id="2">2<br>
-            </div>
-            <div class="col-md-1 square " id="3">3<br></div>
-            <div class="col-md-1 square red" id="4">4<br>
-            </div>
-            <div class="col-md-1 square " id="5">5<br></div>
-            <div class="col-md-1 square " id="6">6<br></div>
-            <div class="col-md-1 square " id="7">7<br></div>
-            <div class="col-md-1 square " id="8">8<br>
-            </div>
-          </div>
-          <div class="row d-flex rowtile">
-              <div class="offset-md-7 col-md-1 square " id="9">9<br></div>
-           </div>
-           <div class="row d-flex rowtile">
-              <div class="col-md-1 square " id="17">17<br></div>
-              <div class="col-md-1 square "  id="16">16<br></div>
-              <div class="col-md-1 square " id="15">15<br>
-              </div>
-              <div class="col-md-1 square " id="14">14<br></div>
-              <div class="col-md-1 square " id="13">13<br></div>
-              <div class="col-md-1 square red " id="12">12<br></div>
-              <div class="col-md-1 square " id="11">11<br></div>
-              <div class="col-md-1 square " id="10">10<br></div>
-            </div>
-            <div class="row d-flex rowtile">
-                <div class=" col-md-1 square " id="18">18<br></div>
-             </div>
-             <div class="row d-flex rowtile">
-                <div class="col-md-1 square red " id="19">19<br> 
+    <div class=" [ bg-throne ] ">
+        <!--Container-->
+        <div class=" [ container ] ">
+            <div class=" [ row d-flex justify-contetnt-between ] ">
+                <div class=" [ sidecontent col-md-2 ] ">
+                    <div class=" [ row ] ">
+                        <div class=" [ players d-flex justify-content-between col-md-12 square-yellow ] ">
+                            <div class="[ players-box col-md-5 no-gutters ]" id="player1">
+                                <img src="" class="players-box_img" alt="player 1" id="player1img">
+                                <p class=" [ text-center ] ">Player 1</p>
+                            </div>
+
+                            <div class=" [ players-box col-md-5 no-gutters ] ">
+                                <img src="" class="players-box_img" alt="player 2" id="player2img">
+                                <p class=" [ text-center ] ">Player 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" [ row mt-5 ] ">
+                        <h3 class="[ col-md-12 text-center ]" id="playerWho"></h3>
+                    </div>
+                    <div class=" [ row text-center ] ">
+                        <img src="graphics/img/dice/dice-5.png" alt="Dice" class=" [ dice col-md-8 ] " id="dice-1">
+                        <button class=" [ btn-roll col-md-12 mt-3 ] " id="roll" onclick="game()"><i class="ion-ios-loop"></i>Roll dice</button>
+                    </div>
                 </div>
-                <div class="offset-md-1 col-md-1 square " id="25">25<br></div>
-                <div class=" col-md-1 square red " id="26">26<br></div>
-                <div class=" col-md-1 square " id="27">27<br></div>
-                <div class="offset-md-2 col-md-1 square " id="34">34<br></div>
 
-             </div>
-             <div class="row d-flex rowtile" >
-                <div class="col-md-1 square " id="20">20<br></div>
-                <div class="offset-md-1 col-md-1 square " id="24">24<br></div>
-                <div class="offset-md-1 col-md-1 square " id="28">28<br></div>
-                <div class="offset-md-2 col-md-1 square " id="33">33<br></div>
-             </div>
-             <div class="row d-flex rowtile">
+                <div class=" [ col-md-10 boardTiles ] ">
+                    <div class="row d-flex rowtile">
+                        <div class=" [ col-md-1 square ]  " id="1">1
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="2">2
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="3">3
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square red ]  " id="4">4
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="5">5
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="6">6
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="7">7
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="8">8
+                            <br>
+                        </div>
+                    </div>
+                    <div class=" [ row d-flex rowtile ] ">
+                        <div class=" [ offset-md-7 col-md-1 square ]  " id="9">9
+                            <br>
+                        </div>
+                    </div>
+                    <div class=" [ row d-flex rowtile ] ">
+                        <div class=" [ col-md-1 square ]  " id="17">17
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="16">16
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="15">15
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="14">14
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="13">13
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square red ] " id="12">12
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="11">11
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="10">10
+                            <br>
+                        </div>
+                    </div>
+                    <div class=" [ row d-flex rowtile ] ">
+                        <div class="  [ col-md-1 square ]  " id="18">18
+                            <br>
+                        </div>
+                    </div>
+                    <div class=" [ row d-flex rowtile ] ">
+                        <div class=" [ col-md-1 square ]  red " id="19">19
+                            <br>
+                        </div>
+                        <div class="  [ offset-md-1 col-md-1 square ]  " id="25">25
+                            <br>
+                        </div>
+                        <div class="  [ col-md-1 square red ]  " id="26">26
+                            <br>
+                        </div>
+                        <div class="  [ col-md-1 square ]  " id="27">27
+                            <br>
+                        </div>
+                        <div class=" [ offset-md-2 col-md-1 square ]  " id="34">34
+                            <br>
+                        </div>
 
-                <div class="col-md-1 square " id="21">21<br></div>
-                <div class="col-md-1 square " id="22">22<br></div>
-                <div class="col-md-1 square " id="23">23<br></div>
-                <div class="offset-md-1 col-md-1 square " id="29">29<br></div>
-                <div class="col-md-1 square " id="30">30<br></div>
-                <div class="col-md-1 square " id="31">31<br></div>
-                <div class="col-md-1 square red " id="32">32<br></div>
-              </div>
+                    </div>
+                    <div class=" [ row d-flex rowtile ] ">
+                        <div class=" [ col-md-1 square ]  " id="20">20
+                            <br>
+                        </div>
+                        <div class=" [ offset-md-1 col-md-1 square ]  " id="24">24
+                            <br>
+                        </div>
+                        <div class=" [ offset-md-1 col-md-1 square ]  " id="28">28
+                            <br>
+                        </div>
+                        <div class=" [ offset-md-2 col-md-1 square ]  " id="33">33
+                            <br>
+                        </div>
+                    </div>
+                    <div class=" [ row d-flex rowtile ] ">
 
-              </div>
-              </div>
-
-      </div>
-
+                        <div class=" [ col-md-1 square ]  " id="21">21
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="22">22
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="23">23
+                            <br>
+                        </div>
+                        <div class=" [ offset-md-1 col-md-1 square ]  " id="29">29
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="30">30
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square ]  " id="31">31
+                            <br>
+                        </div>
+                        <div class=" [ col-md-1 square red ] " id="32">32
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Alert Modal -->
-        <div class="modal  fade" id="trapModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content redBg ">
-                    <div class="modal-body">
-                    <h3 class=" text-center " id="trapText"></h3>
-                    <div class="modal-body-buttons">
-                    <button class="btn btn-secondary" id="trapOkayBtn" onclick="(closeTrapModal())">Oh well....</button>
-                </div>
-                </div>
+        <div class=" [ modal fade ] " id="trapModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class=" [ modal-dialog ] " role="document">
+                <div class=" [ modal-content redBg ] ">
+                    <div class=" [ modal-body ] ">
+                        <h3 class=" [ text-center ] " id="trapText"></h3>
+                        <div class=" [ modal-body-buttons ] ">
+                            <button class=" [ btn btn-secondary ] " id="trapOkayBtn" onclick="(closeTrapModal())">Oh well....</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <!--/modal-->
 
         <!-- Winner GAME Modal -->
-        <div class="modal  fade" id="winnerGameModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content winnerGame" id="winnerModalBody">
-                  <div class="winnerGame-container text-center">
-                    <h3 class="text-center winnerGame-container-header"> Winner of the Dragons </h3>
-                    <h2 class="winnerGame-container-player" id="winnerName"></h2>
-                    <img src="" class=" [ winnerGame-container-img ] " id="winnerImg"><br>
-                    <a class=" [ winnerGame-container-btn col-md-12 ] " id="" href="index.html">New game</a>
-                  </div>
+        <div class=" [ modal fade ] " id="winnerGameModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class=" [ modal-dialog ] " role="document">
+                <div class=" [ modal-content winnerGame ] " id="winnerModalBody">
+                    <div class=" [ winnerGame-container text-center ] ">
+                        <h3 class=" [ text-center winnerGame-container-header ] "> Winner of the Dragons </h3>
+                        <h2 class=" [ winnerGame-container-player ] " id="winnerName"></h2>
+                        <img src="" class=" [ winnerGame-container-img ] " id="winnerImg">
+                        <br>
+                        <a class=" [ winnerGame-container-btn col-md-12 ] " id="" href="index.html">New game</a>
+                    </div>
                 </div>
             </div>
         </div>
         <!--/modal-->
-    </div> <!--/bg-->
+    </div>
+    <!--/bg-->
 
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-<script src="js/characterTokens.js"></script>
-<script src="js/tileMovement.js"></script>
-<script src="js/newGame.js"></script>
-<!--<script src="js/testAudio.js"></script>-->
-
-
-
-<!--
-<script src="js/traps.js"></script>
-<script src="js/dice.js"></script>
-<script src="js/ifDiceRolledSix.js"></script>
-<script src="js/nextPlayer.js"></script>
-<script src="js/playerHitRed.js"></script>
-
-<script src="js/winner.js"></script>
-<script src="js/game.js"></script>
--->
-
-    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="js/characterTokens.js"></script>
+    <script src="js/tileMovement.js"></script>
+    <script src="js/newGame.js"></script>
+    <!--<script src="js/testAudio.js"></script>-->
+</body>
 </html>
