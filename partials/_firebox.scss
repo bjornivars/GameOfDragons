@@ -4,7 +4,9 @@
 }
 .firebox{
   color: red;
-  font-size: 2em;
+  font-size: 3em;
+  font-family: 'Gloria Hallelujah', cursive;
+
   &:hover{
     color: rgb(255, 108, 108);
     
@@ -19,128 +21,3 @@
   display:block;
   margin-top: 6em;
 }
-
-/*
-body, html {height:100%;}
-
-.intro{
-  height:100%; overflow:hidden;
-}
-
-.firebox {
-    display: block;
-    margin: auto;
-    margin-top: 2em;
-    background-color: #c4a56f;
-    width: 216px;
-    height: 63px;
-    border-radius: 50%;
-     box-shadow:   
-     0px -1px 12px white, 
-      0px -2px 30px yellow, 
-      0px -10px 50px #ff8000, 
-      0px -18px 70px red;
-    animation: burn 0.5s infinite;
-  }
-  a{
-    font-size: 1.7em;
-    text-align: center;
-    color: black;
-    text-transform: uppercase;
-    text-shadow:  
-     0px -2px 12px white, 
-      0px -3px 30px yellow, 
-      0px -12px 50px #ff8000, 
-      0px -20px 70px red;
-    animation: burn 2s infinite;
-    &:hover{
-        color: rgb(94, 8, 8);
-        text-decoration: none;
-    }
-  }
-  @media (max-width: 450px){
-    .firebox {
-      width: 350px;
-    height: 100px;
-      
-    }
-    h1{
-      font-size: 55px;
-    }
-  }
-  @keyframes burn
-  {
-  0% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34,
-    20px -40px 50px #ec760c,
-    -20px -60px 60px #cd4606,
-    0 -80px 70px #973716,
-    10px -90px 80px #451b0e;
-    
-    }
-  100% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #fefcc9,
-    -20px -20px 40px #feec85,
-    22px -42px 60px #ffae34,
-    -22px -58px 50px #ec760c,
-    0 -82px 80px #cd4606,
-    10px -90px 80px  #973716;
-   
-    }
-  }
-  
-  @-moz-keyframes burn
-  {
-  0% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34,
-    20px -40px 50px #ec760c,
-    -20px -60px 60px #cd4606,
-    0 -80px 70px #973716,
-    10px -90px 80px #451b0e;}
-  100% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #fefcc9,
-    -20px -20px 40px #feec85,
-    22px -42px 60px #ffae34,
-    -22px -58px 50px #ec760c,
-    0 -82px 80px #cd4606,
-    10px -90px 80px  #973716;}
-  }
-  
-  @-webkit-keyframes burn
-  {
-  0% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34,
-    20px -40px 50px #ec760c,
-    -20px -60px 60px #cd4606,
-    0 -80px 70px #973716,
-    10px -90px 80px #451b0e;}
-  100% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #fefcc9,
-    -20px -20px 40px #feec85,
-    22px -42px 60px #ffae34,
-    -22px -58px 50px #ec760c,
-    0 -82px 80px #cd4606,
-    10px -90px 80px  #973716;}
-  }
-  
-  @-o-keyframes burn
-  {
-  0% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34,
-    20px -40px 50px #ec760c,
-    -20px -60px 60px #cd4606,
-    0 -80px 70px #973716,
-    10px -90px 80px #451b0e;}
-  100% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #fefcc9,
-    -20px -20px 40px #feec85,
-    22px -42px 60px #ffae34,
-    -22px -58px 50px #ec760c,
-    0 -82px 80px #cd4606,
-    10px -90px 80px  #973716;}
-  }
-  */

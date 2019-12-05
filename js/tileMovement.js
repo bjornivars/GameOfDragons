@@ -21,8 +21,8 @@ function checkTrap(tile){
             return tile - 3;
         case 32:
             showTrapModal();
-            trapText.innerHTML = "You lost a battle.... Move back 20 steps";
-            return tile - 20;
+            trapText.innerHTML = "You lost a battle.... Move back 21 steps";
+            return tile - 21;
         default:
             return tile;
     }

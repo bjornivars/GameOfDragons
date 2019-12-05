@@ -5,24 +5,35 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Cormorant Infant", serif;
+  font-family: "Gloria Hallelujah", cursive;
 }
 
 h1 {
-  font-family: sans-serif;
+  font-family: "Cormorant Infant", serif;
 }
 
 h2 {
-  font-family: sans-serif;
+  font-family: "Cormorant Infant", serif;
+}
+
+h3 {
+  font-family: "Cormorant Infant", serif;
+}
+
+.btn {
+  font-family: "Gloria Hallelujah", cursive;
 }
 
 .bg-dragonWolf {
+  background: url("graphics/img/darkBackground2_edit.jpg");
   background-color: black;
   width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bg-throne {
-  background: url("graphics/img/throneOverlayed.png");
+  background: url("graphics/img/darkBackground2_edit.jpg");
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -92,7 +103,7 @@ h2 {
 .btn {
   background-color: white;
   color: black;
-  border-radius: 0;
+  border-radius: 0.2rem;
 }
 .btn-start {
   background-color: #3B6A00;
@@ -104,6 +115,7 @@ h2 {
 }
 
 .square {
+  font-family: "Cormorant Infant", serif;
   box-sizing: border-box;
   height: 75px;
   border: 3px solid white;
@@ -125,8 +137,21 @@ h2 {
   opacity: 0.7;
 }
 
+.modal-dialog {
+  max-width: 600px;
+}
 .modal-content {
+  margin-top: 3em;
+  border: 2px solid #424242;
   background-color: black;
+}
+.modal-body-buttons {
+  text-align: center;
+  padding-top: 2em;
+}
+
+.redBg {
+  background-color: #4e0505;
 }
 
 .focusPlayer1 {
@@ -158,11 +183,11 @@ h2 {
 .largeStartButton {
   padding: 50px;
   text-align: center;
-  background-color: #3B6A00;
+  background-color: #539107;
   color: white;
 }
 .largeStartButton:hover {
-  background-color: #284603;
+  background-color: #424242;
   color: white;
 }
 
@@ -175,6 +200,11 @@ h2 {
   background-color: #3B6A00;
   color: white;
   border: 1px solid #3B6A00;
+  border-radius: 0.2rem;
+}
+.btn-roll:hover {
+  background-color: #49790f;
+  cursor: pointer;
 }
 
 .yellowBorder {
@@ -184,6 +214,7 @@ h2 {
 .winnerGame-container {
   width: 80%;
   margin: auto;
+  padding-bottom: 3em;
 }
 .winnerGame-container-header {
   width: 80%;
@@ -193,6 +224,27 @@ h2 {
 }
 .winnerGame-container-player {
   padding-top: 1em;
+}
+.winnerGame-container-img {
+  width: 75%;
+  margin-bottom: 2em;
+}
+.winnerGame-container-btn {
+  margin-top: 2em;
+  color: white;
+  background-color: #3B6A00;
+  border-radius: 0.2rem;
+}
+.winnerGame-container-btn:hover {
+  background-color: #5a6268;
+  color: white;
+}
+
+.close {
+  color: white;
+}
+.close:hover {
+  color: red;
 }
 
 .rowtile {
@@ -216,7 +268,8 @@ h2 {
 
 .firebox {
   color: red;
-  font-size: 2em;
+  font-size: 3em;
+  font-family: "Gloria Hallelujah", cursive;
 }
 .firebox:hover {
   color: #ff6c6c;
@@ -230,130 +283,5 @@ h2 {
   display: block;
   margin-top: 6em;
 }
-
-/*
-body, html {height:100%;}
-
-.intro{
-  height:100%; overflow:hidden;
-}
-
-.firebox {
-    display: block;
-    margin: auto;
-    margin-top: 2em;
-    background-color: #c4a56f;
-    width: 216px;
-    height: 63px;
-    border-radius: 50%;
-     box-shadow:   
-     0px -1px 12px white, 
-      0px -2px 30px yellow, 
-      0px -10px 50px #ff8000, 
-      0px -18px 70px red;
-    animation: burn 0.5s infinite;
-  }
-  a{
-    font-size: 1.7em;
-    text-align: center;
-    color: black;
-    text-transform: uppercase;
-    text-shadow:  
-     0px -2px 12px white, 
-      0px -3px 30px yellow, 
-      0px -12px 50px #ff8000, 
-      0px -20px 70px red;
-    animation: burn 2s infinite;
-    &:hover{
-        color: rgb(94, 8, 8);
-        text-decoration: none;
-    }
-  }
-  @media (max-width: 450px){
-    .firebox {
-      width: 350px;
-    height: 100px;
-
-    }
-    h1{
-      font-size: 55px;
-    }
-  }
-  @keyframes burn
-  {
-  0% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34,
-    20px -40px 50px #ec760c,
-    -20px -60px 60px #cd4606,
-    0 -80px 70px #973716,
-    10px -90px 80px #451b0e;
-
-    }
-  100% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #fefcc9,
-    -20px -20px 40px #feec85,
-    22px -42px 60px #ffae34,
-    -22px -58px 50px #ec760c,
-    0 -82px 80px #cd4606,
-    10px -90px 80px  #973716;
-
-    }
-  }
-
-  @-moz-keyframes burn
-  {
-  0% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34,
-    20px -40px 50px #ec760c,
-    -20px -60px 60px #cd4606,
-    0 -80px 70px #973716,
-    10px -90px 80px #451b0e;}
-  100% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #fefcc9,
-    -20px -20px 40px #feec85,
-    22px -42px 60px #ffae34,
-    -22px -58px 50px #ec760c,
-    0 -82px 80px #cd4606,
-    10px -90px 80px  #973716;}
-  }
-
-  @-webkit-keyframes burn
-  {
-  0% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34,
-    20px -40px 50px #ec760c,
-    -20px -60px 60px #cd4606,
-    0 -80px 70px #973716,
-    10px -90px 80px #451b0e;}
-  100% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #fefcc9,
-    -20px -20px 40px #feec85,
-    22px -42px 60px #ffae34,
-    -22px -58px 50px #ec760c,
-    0 -82px 80px #cd4606,
-    10px -90px 80px  #973716;}
-  }
-
-  @-o-keyframes burn
-  {
-  0% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34,
-    20px -40px 50px #ec760c,
-    -20px -60px 60px #cd4606,
-    0 -80px 70px #973716,
-    10px -90px 80px #451b0e;}
-  100% {text-shadow: 0 0 20px #fefcc9,
-    10px -10px 30px #fefcc9,
-    -20px -20px 40px #feec85,
-    22px -42px 60px #ffae34,
-    -22px -58px 50px #ec760c,
-    0 -82px 80px #cd4606,
-    10px -90px 80px  #973716;}
-  }
-  */
 
 /*# sourceMappingURL=style.css.map */

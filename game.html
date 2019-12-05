@@ -8,6 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant&display=swap" rel="stylesheet">
+
 
         <link rel="stylesheet" href="style.css">
     </head>
@@ -131,9 +134,13 @@
         <!-- Alert Modal -->
         <div class="modal  fade" id="trapModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog" role="document">
-                <div class="modal-content ">
-                    <h3 id="trapText"></h3>
-                    <button id="trapOkayBtn" onclick="(closeTrapModal())">Darn!</button>
+                <div class="modal-content redBg ">
+                    <div class="modal-body">
+                    <h3 class=" text-center " id="trapText"></h3>
+                    <div class="modal-body-buttons">
+                    <button class="btn btn-secondary" id="trapOkayBtn" onclick="(closeTrapModal())">Oh well....</button>
+                </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -146,8 +153,8 @@
                   <div class="winnerGame-container text-center">
                     <h3 class="text-center winnerGame-container-header"> Winner of the Dragons </h3>
                     <h2 class="winnerGame-container-player" id="winnerName"></h2>
-                    <img src="" id="winnerImg"><br>
-                    <a class="btn-roll col-md-12 mt-3" id="" href="index.html">New game</a>
+                    <img src="" class=" [ winnerGame-container-img ] " id="winnerImg"><br>
+                    <a class=" [ winnerGame-container-btn col-md-12 ] " id="" href="index.html">New game</a>
                   </div>
                 </div>
             </div>

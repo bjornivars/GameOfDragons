@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,36 +12,40 @@
     <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
-    <audio id="myAudio" loop="loop">
-            <source src="audio/soundTrack.mp3" />
-    </audio>
-    <div class="bg-dragonWolf intro ">
-        <div class="container ">
-                <div class=" [ container-quote ] ">
-                <q class=" [ container-quote-text ] "> I will take what is mine with fire and blood. </q>
-                    <p>— Daenerys Targaryen</p>
-                    <div class=" hide1 flameBtn " id="startGame">
-                        <a href="index.html" class="firebox">Start Game</a>
-                    </div>
-                    <a href="#noscroll" id="mute"><i class="fas fa-volume-mute"></i></a>
 
+<body>
+    <audio id="myAudio" loop="loop" autoplay>
+        <source src="audio/soundTrack.mp3" />
+    </audio>
+
+    <div class=" [ bg-dragonWolf intro ] ">
+        <video style="position: fixed; width: 100vw; height: 100vh" autoplay loop>
+            <source frameborder="0" src="graphics/img/flameVid2.mp4">
+        </video>
+
+        <div class=" [ container ] ">
+            <div class=" [ container-quote ] ">
+                <q class=" [ container-quote-text ] "> I will take what is mine with fire and blood. </q>
+                <p>— Daenerys Targaryen</p>
+                <div class=" [ hide1 flameBtn ] " id="startGame">
+                    <a href="index.html" class=" [ firebox ] ">Start Game</a>
                 </div>
+                <a href="#noscroll" id="mute"><i class=" [ fas fa-volume-mute ] "></i></a>
+            </div>
         </div>
     </div>
 
+    <script src="js/testAudio.js"></script>
+    <script>
+        window.onload = function() //executes when the page finishes loading
+            {
+                setTimeout(startGameButton, 4000); //sets a timer which calls function func1 after 2,000 milliseconds = 2 secs.
+            };
 
-   <!--<script src="js/testAudio.js"></script>--> 
-   <script>
-   window.onload=function()  //executes when the page finishes loading
-{
-	setTimeout(func1, 4000);  //sets a timer which calls function func1 after 2,000 milliseconds = 2 secs.
-	
-};
-function func1()
-{
-	document.getElementById("startGame").className="show1";
-}
-</script>
+        function startGameButton() {
+            document.getElementById("startGame").className = "show1";
+        }
+    </script>
 </body>
+
 </html>
