@@ -8,6 +8,14 @@ body {
   font-family: "Gloria Hallelujah", cursive;
 }
 
+#skipToContent {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: 2000;
+  background-color: red;
+}
+
 .Cormorant {
   font-family: "Cormorant Infant", serif;
 }
@@ -237,6 +245,7 @@ h3 {
 }
 .winnerGame-container-img {
   width: 75%;
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 .winnerGame-container-btn {
@@ -248,6 +257,10 @@ h3 {
 .winnerGame-container-btn:hover {
   background-color: #5a6268;
   color: white;
+}
+
+.btn-secondary:focus {
+  box-shadow: 0 0 0 0.2rem white;
 }
 
 .close {

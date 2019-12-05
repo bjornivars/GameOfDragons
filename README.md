@@ -3,7 +3,7 @@ GameOfThrones INFO LOG:
 Tests that has been run: 
 - https://tools.pingdom.com/ (website loading speed)
 - https://www.webaccessibility.com/ (accessible to persons with disabilities)
-- https://achecker.ca/checker/index.php (WCAG test)
+- https://achecker.ca/ (WCAG test)
 
 Difficulties along the way:
   - Api did not give an id to EASILY find character. 

@@ -18,9 +18,13 @@
         <source src="audio/soundTrack.mp3" />
     </audio>
 
+    <div id="skipToContent">
+      <a href="#roll" tabindex="1">jump to roll dice</a>
+    </div>
+    
     <nav class=" [ navbar navbar-expand-md ] ">
         <div class=" [ mx-auto order-0 ] ">
-            <a class=" [ navbar-brand mx-auto ] " href="index.html">Game of Dragons</a>
+            <a class=" [ navbar-brand mx-auto ] " href="index.html" tabindex="2">Game of Dragons</a>
             <button class=" [ navbar-toggler ] " type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class=" [ navbar-toggler-icon ] "></span>
             </button>
@@ -28,7 +32,7 @@
         <div class=" [ navbar-collapse collapse w-100 order-3 dual-collapse2 ] ">
             <ul class=" [ navbar-nav ml-auto ] ">
                 <li class=" [ nav-item ] ">
-                    <a class=" [ nav-link ] " href="#">Rules</a>
+                    <a class=" [ nav-link ] " href="#" tabindex="3">Rules</a>
                 </li>
             </ul>
         </div>
@@ -42,22 +46,22 @@
                     <div class=" [ row ] ">
                         <div class=" [ players d-flex justify-content-between col-md-12 square-yellow ] ">
                             <div class="[ players-box col-md-5 no-gutters ]" id="player1">
-                                <img src="" class="players-box_img" alt="player 1" id="player1img">
+                                <img src="" class="players-box_img" alt="player 1" id="player1img" tabindex="4">
                                 <p class=" [ text-center ] ">Player 1</p>
                             </div>
 
                             <div class=" [ players-box col-md-5 no-gutters ] ">
-                                <img src="" class="players-box_img" alt="player 2" id="player2img">
+                                <img src="" class="players-box_img" alt="player 2" id="player2img" tabindex="5">
                                 <p class=" [ text-center ] ">Player 2</p>
                             </div>
                         </div>
                     </div>
                     <div class=" [ row mt-5 ] ">
-                        <h3 class="[ col-md-12 text-center ]" id="playerWho"></h3>
+                        <h3 class="[ col-md-12 text-center ]" id="playerWho" tabindex="6"></h3>
                     </div>
                     <div class=" [ row text-center ] ">
                         <img src="graphics/img/dice/dice-5.png" alt="Dice" class=" [ dice col-md-8 ] " id="dice-1">
-                        <button class=" [ btn-roll col-md-12 mt-3 ] " id="roll" onclick="game()">Roll dice</button>
+                        <button class=" [ btn-roll col-md-12 mt-3 ] " id="roll" onclick="game()" tabindex="7">Roll dice</button>
                     </div>
                 </div>
 

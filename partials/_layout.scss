@@ -10,6 +10,14 @@ body{
     // font-family: 'Cormorant Infant', serif;
 }
 
+#skipToContent{
+    position: absolute;
+    top: -40px;
+    left: 0;
+    z-index: 2000;
+    background-color: red;
+}
+
 .Cormorant{
     font-family: 'Cormorant Infant', serif;
 }
@@ -262,6 +270,7 @@ opacity: .75;
         }
         &-img{
             width: 75%;
+            margin-top: 2em;
             margin-bottom: 2em;
         }
         &-btn{
@@ -278,7 +287,9 @@ opacity: .75;
 }
 
 
-
+.btn-secondary:focus{
+    box-shadow: 0 0 0 0.2rem white;
+}
 
 
 
