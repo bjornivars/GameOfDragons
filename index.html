@@ -9,41 +9,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Gloria+Hallelujah&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-        <audio id="myAudio" loop="loop">
-                <source src="audio/soundTrack.mp3" />
-        </audio>
-    <nav class="navbar navbar-expand-md">
-        <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="introSite.html">Game of Dragons</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                <span class="navbar-toggler-icon"></span>
+    <audio id="myAudio" loop="loop">
+        <source src="audio/soundTrack.mp3" />
+    </audio>
+
+    <nav class=" [ navbar navbar-expand-md ] ">
+        <div class=" [ mx-auto order-0 ] ">
+            <a class=" [ navbar-brand mx-auto ] " href="introSite.html">Game of Dragons</a>
+            <button class=" [ navbar-toggler ] " type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class=" [ navbar-toggler-icon ] "></span>
             </button>
         </div>
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Rules</a>
+        <div class=" [ navbar-collapse collapse w-100 order-3 dual-collapse2 ] ">
+            <ul class=" [ navbar-nav ml-auto ] ">
+                <li class=" [ nav-item ] ">
+                    <a class=" [ nav-link ] " href="#">Rules</a>
                 </li>
-                <li class="nav-item">
-                        <a href="#noscroll" id="mute"><i class="fas fa-volume-mute"></i></a>
-                      </li>
+                <li class=" [ nav-item ] ">
+                    <a href="#noscroll" id="mute"><i class=" [ fas fa-volume-mute ] "></i></a>
+                </li>
             </ul>
         </div>
     </nav>
 
-        
     <div class=" [ bg-dragonWolf ] ">
         <!--Container-->
-        <div class="container ">
-            <h1 class="text-center">Select your character</h1>
-            <p class="text-center"> Click image for selecting</p>
+        <div class=" [ container ] ">
+            <h1 class=" [ text-center ] ">Select your character</h1>
+            <p class=" [ text-center ] "> Click image for selecting</p>
             <div class=" [ player ] ">
                 <div class=" [ player-1 d-flex  ] ">
                     <div class=" [ player-1-circle ] "></div>
@@ -60,125 +59,120 @@
             </div>
 
             <div class=" [ cards row ] " id="cardContainer">
-                <div class="m-auto cards-row row d-flex justify-content-between w-100 ">
+                <div class=" [ m-auto cards-row row d-flex justify-content-between w-100 ] ">
                     <div id="card583" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_jonSnow.png" class=" [ cards-img w-100  ] " alt="Jon Icon" id="selectJon" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Jon</h3>
+                        <h3 class=" [ cards-name ] ">Jon</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="583" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card957" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_sansa_colored.png" class=" [ cards-img w-100  ] " alt="Sansa Icon" id="selectSansa" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Sansa</h3>
+                        <h3 class=" [ cards-name ] ">Sansa</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="957" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card339" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_eddard.png" class=" [ cards-img w-100 ] " alt="Eddard Icon" id="selectEddard" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Eddard</h3>
+                        <h3 class=" [ cards-name ] ">Eddard</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="339" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card148" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_arya_colored.png" class=" [ cards-img w-100 ] " alt="Arya Icon" id="selectArya" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Arya</h3>
+                        <h3 class=" [ cards-name ] ">Arya</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="148" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card271" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_daenerys.png" class=" [ cards-img w-100 ] " alt="Daenerys Icon" id="selectDaenerys" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Daenerys</h3>
+                        <h3 class=" [ cards-name ] ">Daenerys</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="271" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                 </div>
                 <p id="apiText"></p>
-                <div class="row d-flex justify-content-between w-100 m-auto ">
+                <div class=" [ row d-flex justify-content-between w-100 m-auto ] ">
                     <div id="card238" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_cercei.png" class=" [ cards-img w-100 ] " alt="Cersei Icon" id="selectCersei" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Cercei</h3>
+                        <h3 class=" [ cards-name ] ">Cercei</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="238" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card529" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_jaime.png" class=" [ cards-img w-100 ] " alt="Jaime Icon" id="selectJaime" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Jaime</h3>
+                        <h3 class=" [ cards-name ] ">Jaime</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="529" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card565" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_joffrey.png" class=" [ cards-img w-100 ] " alt="Joffrey Icon" id="selectJoffrey" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Joffrey</h3>
+                        <h3 class=" [ cards-name ] ">Joffrey</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="565" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card206" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_bran.png" class=" [ cards-img w-100 ] " alt="Brandon Icon" id="selectBrandon" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Brandon</h3>
+                        <h3 class=" [ cards-name ] ">Brandon</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="206" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card1052" class=" [ col-md-2 m-auto text-center ] ">
                         <img src="graphics/img/characters/circle_tyrion.png" class=" [ cards-img w-100 ] " alt="Tyrion Icon" id="selectTyrion" onClick="choosePlayer(this.id)">
-                        <h3 class="cards-name">Tyrion</h3>
+                        <h3 class=" [ cards-name ] ">Tyrion</h3>
                         <button href="" class=" [ btn btn-secondary ] " id="1052" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                 </div>
-
             </div>
-
         </div>
         <!--/container-->
+
         <!-- Modal -->
-        <div class="modal fade" id="readMoreModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title black" id="CharacterName">Character info</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class=" [ modal fade ] " id="readMoreModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true">
+            <div class=" [ modal-dialog ] " role="document">
+                <div class=" [ modal-content ] ">
+                    <div class=" [ modal-header ] ">
+                        <h5 class=" [ modal-title black ] " id="CharacterName">Character info</h5>
+                        <button type="button" class=" [ close ] " data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body" id="modalBody">
+                    <div class=" [ modal-body ] " id="modalBody">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <div class=" [ modal-footer ] ">
+                        <button type="button" class=" [ btn btn-secondary ] " data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!--/modal-->
 
-
-                <!-- Confirm Modal -->
-                <div class="modal  fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content ">
-                                <div class="modal-body">
-                                    <h3 class="text-center">Are you sure you want to be this character?</h3>
-                                    <div class="modal-body-buttons">
-                                        <button class=" btn btn-secondary " id="confirm" onclick="confirmDeny(this.id)">YEAH!</button>
-                                        <button class=" btn btn-secondary " id="deny" onclick="confirmDeny(this.id)" >Nope</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/modal-->
-
-                <!-- START GAME Modal -->
-                <div class="modal  fade" id="startGameModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content startGame">
-                          <a href="game.html" class="largeStartButton">START GAME</a>
+        <!-- Confirm Modal -->
+        <div class=" [ modal  fade ] " id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class=" [ modal-dialog ] " role="document">
+                <div class=" [ modal-content ] ">
+                    <div class=" [ modal-body ] ">
+                        <h3 class=" [ text-center ] ">Are you sure you want to be this character?</h3>
+                        <div class=" [ modal-body-buttons ] ">
+                            <button class=" [ btn btn-secondary ] " id="confirm" onclick="confirmDeny(this.id)">YEAH!</button>
+                            <button class=" [ btn btn-secondary ] " id="deny" onclick="confirmDeny(this.id)">Nope</button>
                         </div>
                     </div>
                 </div>
-                <!--/modal-->
+            </div>
+        </div>
+        <!--/modal-->
 
+        <!-- START GAME Modal -->
+        <div class=" [ modal fade ] " id="startGameModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class=" [ modal-dialog ] " role="document">
+                <div class=" [ modal-content startGame ] ">
+                    <a href="game.html" class="largeStartButton">START GAME</a>
+                </div>
+            </div>
+        </div>
+        <!--/modal-->
     </div>
     <!--/bg-->
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-   <!--<script src="js/testAudio.js"></script>--> 
-<script>
-
-</script>
+    <!--<script src="js/testAudio.js"></script>-->
+    <script>
+    </script>
 </body>
 
 </html>

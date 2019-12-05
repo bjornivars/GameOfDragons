@@ -131,29 +131,29 @@ function characterInfo_click(clicked) {
             .then((result) => {
                 let character = result;
                 document.getElementById("modalBody").innerHTML = `
-                <h4 id="characterModalName"> ${character.name}</h4>
-                <p id="characterModalGender">Gender: ${character.gender}</p>
-                <p id="characterModalCulture">Culture: ${character.culture}</p>
+                <h4 id="characterModalName" class=" [ Cormorant ] "> ${character.name}</h4>
+                <p id="characterModalGender" class=" [ Cormorant ] ">Gender: ${character.gender}</p>
+                <p id="characterModalCulture" class=" [ Cormorant ] ">Culture: ${character.culture}</p>
                 <div>
                     <p>Titles:</p>
-                    <ul id="characterModalTitles">
+                    <ul id="characterModalTitles" class=" [ Cormorant ] ">
                         ${
                             // learn this by heart
                             // https://stackoverflow.com/questions/45812160/unexpected-comma-using-map
                             character.titles.map(function(value) {
-                                return `<li>${value}</li>`
+                                return `<li class=" [ Cormorant ] ">${value}</li>`
                             }).join('')
                         }
                     </ul>
                 </div>
                 <div>
-                    <p>Aliases:</p>
-                    <ul id="characterModalAliases">
+                    <p class=" [ Cormorant ] ">Aliases:</p>
+                    <ul id="characterModalAliases" class=" [ Cormorant ] ">
                       ${
                         // learn this by heart
                         // https://stackoverflow.com/questions/45812160/unexpected-comma-using-map
                         character.aliases.map(function(value) {
-                          return `<li>${value}</li>`
+                          return `<li class=" [ Cormorant ] ">${value}</li>`
                         }).join('')
                       }
                     </ul>

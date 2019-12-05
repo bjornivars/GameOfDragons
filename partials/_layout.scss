@@ -2,7 +2,7 @@ body{
    // background-image: url("graphics/img/dragonWolf.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: rgb(228, 228, 228);
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -10,6 +10,9 @@ body{
     // font-family: 'Cormorant Infant', serif;
 }
 
+.Cormorant{
+    font-family: 'Cormorant Infant', serif;
+}
 
 h1{
     font-family: 'Cormorant Infant', serif;
@@ -156,6 +159,9 @@ h3{
 }
 
 .modal{ 
+    &-header{
+        border-bottom: 1px solid #424242;
+    }
     &-dialog{
         max-width: 600px;
     }
@@ -170,6 +176,9 @@ h3{
             padding-top: 2em;
 
         }
+    }
+    &-footer{
+        border-top: 1px solid #424242;
     }
 }
 .redBg{
