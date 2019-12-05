@@ -35,7 +35,7 @@ function game(){
         diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png';
     }, 250);
 
-dice = 34
+
     // give score to correct player
     if(player1Active){
         document.getElementById("playerWho").innerHTML = "Player 2"; // Add current players name in DOM
