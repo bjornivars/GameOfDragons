@@ -311,3 +311,19 @@ opacity: .75;
 .no-gutters{
     padding: 0;
 }
+
+
+
+.dropdown-menu{
+    width: 500px;
+    padding: 2em;
+    color: black;
+    background-color: #FDB62F;
+    border: 1px solid #FDB62F;
+}
+
+.outline{
+    &:focus{
+        outline: 2px solid #FDB62F;
+    }
+}

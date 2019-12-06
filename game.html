@@ -11,6 +11,16 @@
     <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Gloria+Hallelujah&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel='icon' href='graphics/img/favicon.ico' type='image/x-icon'/>
+
+    <!-- META TAGS FOR OPEN GRAPH -->
+    <meta name="description" content="Be the first to win the Game of Dragons!"> <!-- ˜150 chars -->
+    <meta property="og:title" content="Game of Dragons">
+    <meta property="og:description" content="Game of Dragons is a boardgame where you can play against your friend. Try not to hit the traps!"> <!-- ˜300 chars -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bishadow.com/SEMESTEROPPGAVE_2/index.html">
+    <meta property="og:image" content="graphics/img/logo3.png"> <!-- 200x200px - 1200x1200px -->
+
 </head>
 
 <body>
@@ -24,15 +34,18 @@
     
     <nav class=" [ navbar navbar-expand-md ] ">
         <div class=" [ mx-auto order-0 ] ">
-            <a class=" [ navbar-brand mx-auto ] " href="index.html" tabindex="2">Game of Dragons</a>
-            <button class=" [ navbar-toggler ] " type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                <span class=" [ navbar-toggler-icon ] "></span>
-            </button>
+            <a class=" [ navbar-brand mx-auto ] " href="index.html" tabindex="2"><img src="graphics/img/logo3.png" style="width:15%;">Game Of Dragons</a>
         </div>
         <div class=" [ navbar-collapse collapse w-100 order-3 dual-collapse2 ] ">
             <ul class=" [ navbar-nav ml-auto ] ">
-                <li class=" [ nav-item ] ">
-                    <a class=" [ nav-link ] " href="#" tabindex="3">Rules</a>
+                <li class=" [ nav-item dropdown ] ">
+                    <a class=" [ nav-link dropdown-toggle ] " data-toggle="dropdown" href="#" tabindex="3">Rules</a>
+                    <div class=" [ dropdown-menu dropdown-menu-right ] ">
+                        <p class=" [ dropdown-item-text ] " >Spin the dice</p>
+                        <p class=" [ dropdown-item-text ] " >If you roll a 6, you get to roll one more time</p>
+                        <p class=" [ dropdown-item-text ] " >If you hit a trap, you are moved back the number of steps the trap says</p>
+                        <p class=" [ dropdown-item-text ] ">First to reach tile 34 wins the game of dragons</p>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -46,22 +59,22 @@
                     <div class=" [ row ] ">
                         <div class=" [ players d-flex justify-content-between col-md-12 square-yellow ] ">
                             <div class="[ players-box col-md-5 no-gutters ]" id="player1">
-                                <img src="" class="players-box_img" alt="player 1" id="player1img" tabindex="4">
+                                <img src="" class=" [ players-box_img outline ] " alt="player 1" id="player1img" tabindex="4">
                                 <p class=" [ text-center ] ">Player 1</p>
                             </div>
 
                             <div class=" [ players-box col-md-5 no-gutters ] ">
-                                <img src="" class="players-box_img" alt="player 2" id="player2img" tabindex="5">
+                                <img src="" class=" [ players-box_img outline ] " alt="player 2" id="player2img" tabindex="5">
                                 <p class=" [ text-center ] ">Player 2</p>
                             </div>
                         </div>
                     </div>
                     <div class=" [ row mt-5 ] ">
-                        <h3 class="[ col-md-12 text-center ]" id="playerWho" tabindex="6"></h3>
+                        <h3 class="[ col-md-12 text-center outline ]" id="playerWho" tabindex="6"></h3>
                     </div>
                     <div class=" [ row text-center ] ">
                         <img src="graphics/img/dice/dice-5.png" alt="Dice" class=" [ dice col-md-8 ] " id="dice-1">
-                        <button class=" [ btn-roll col-md-12 mt-3 ] " id="roll" onclick="game()" tabindex="7">Roll dice</button>
+                        <button class=" [ btn-roll col-md-12 mt-3 outline ] " id="roll" onclick="game()" tabindex="7">Roll dice</button>
                     </div>
                 </div>
 
@@ -195,7 +208,7 @@
                     <div class=" [ modal-body ] ">
                         <h3 class=" [ text-center ] " id="trapText"></h3>
                         <div class=" [ modal-body-buttons ] ">
-                            <button class=" [ btn btn-secondary ] " id="trapOkayBtn" onclick="(closeTrapModal())">Oh well....</button>
+                            <button class=" [ btn btn-secondary outline ] " id="trapOkayBtn" onclick="(closeTrapModal())">Oh well....</button>
                         </div>
                     </div>
                 </div>
@@ -212,7 +225,7 @@
                         <h2 class=" [ winnerGame-container-player ] " id="winnerName" ></h2>
                         <img src="" class=" [ winnerGame-container-img ] " id="winnerImg" alt="Winner Image">
                         <br>
-                        <a class=" [ winnerGame-container-btn col-md-12 ] " id="" href="selectCharacter.html">New game</a>
+                        <a class=" [ winnerGame-container-btn col-md-12 outline ] " id="" href="selectCharacter.html">New game</a>
                     </div>
                 </div>
             </div>
