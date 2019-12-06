@@ -51,7 +51,7 @@
         </div>
     </nav>
 
-    <div class=" [ bg-dragonWolf ] ">
+    <div class=" [ bg-texture ] ">
         <!--Container-->
         <div class=" [ container ] ">
             <h1 class=" [ text-center outline ] " id="select" tabindex="4" >Select your character</h1>
@@ -81,22 +81,22 @@
                     <div id="card957" class=" [ col-md-2 m-auto text-center ] ">
                         <img tabindex="9" src="graphics/img/characters/circle_sansa_colored.png" class=" [ cards-img w-100 outline ] " alt="Sansa Icon" id="selectSansa" onClick="choosePlayer(this.id)">
                         <h2 tabindex="10" class=" [ cards-name outline ] ">Sansa</h2>
-                        <button tabindex="11" href="" class=" [ btn btn-secondary outline ] " id="957" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <button tabindex="11" href="" class=" [ outline btn btn-secondary  ] " id="957" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card339" class=" [ col-md-2 m-auto text-center ] ">
                         <img tabindex="12" src="graphics/img/characters/circle_eddard.png" class=" [ cards-img w-100 outline ] " alt="Eddard Icon" id="selectEddard" onClick="choosePlayer(this.id)">
                         <h2 tabindex="13" class=" [ cards-name outline ] ">Eddard</h2>
-                        <button tabindex="14" href="" class=" [ btn btn-secondary outline ] " id="339" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <button tabindex="14" href="" class=" [ outline btn btn-secondary  ] " id="339" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card148" class=" [ col-md-2 m-auto text-center ] ">
                         <img tabindex="15" src="graphics/img/characters/circle_arya_colored.png" class=" [ cards-img w-100 outline ] " alt="Arya Icon" id="selectArya" onClick="choosePlayer(this.id)">
                         <h2 tabindex="16" class=" [ cards-name outline ] ">Arya</h2>
-                        <button tabindex="17" href="" class=" [ btn btn-secondary outline ] " id="148" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <button tabindex="17" href="" class=" [ outline btn btn-secondary  ] " id="148" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card271" class=" [ col-md-2 m-auto text-center ] ">
                         <img tabindex="18" src="graphics/img/characters/circle_daenerys.png" class=" [ cards-img w-100 outline ] " alt="Daenerys Icon" id="selectDaenerys" onClick="choosePlayer(this.id)">
                         <h2 tabindex="19" class=" [ cards-name outline ] ">Daenerys</h2>
-                        <button tabindex="20" href="" class=" [ btn btn-secondary outline ] " id="271" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <button tabindex="20" href="" class=" [ outline btn btn-secondary  ] " id="271" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                 </div>
                 <p id="apiText"></p>
@@ -131,20 +131,34 @@
         </div>
         <!--/container-->
 
+
+        <!-- Footer -->
+        <footer class=" [ page-footer font-small blue pt-4 m-auto ] ">
+            <div class=" [ m-auto text-center text-md-left w-75 page-footer-bg ] ">
+                <div class=" [ row d-flex justify-content-center ] ">
+                    <div class=" [ col-md-6 mt-md-0 mt-3 ] ">
+                        <h5 class=" [ text-uppercase text-center ] ">About this game</h5>
+                        <p class=" [ text-center ] ">This game is designed using Adobe XD and developed using Bootstrap 4 and
+                            Vanilla JS. </p>
+                    </div>
+                    <hr class=" [ clearfix w-100 d-md-none pb-3 ] ">
+                </div>
+            </div>
+        </footer>
+        <!-- Footer -->
+
+
         <!-- Modal -->
         <div class=" [ modal fade ] " id="readMoreModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true">
             <div class=" [ modal-dialog ] " role="document">
                 <div class=" [ modal-content ] ">
                     <div class=" [ modal-header ] ">
-                        <h5 class=" [ modal-title black ] " id="CharacterName">Character info</h5>
-                        <button type="button" class=" [ close outline ] " data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" >&times;</span>
-                        </button>
+                        <h3 class=" [ modal-title black ] " id="CharacterName">Character info</h3>
                     </div>
                     <div class=" [ modal-body ] " id="modalBody">
                     </div>
                     <div class=" [ modal-footer ] ">
-                        <button type="button" class=" [ btn btn-secondary outline ] " data-dismiss="modal">Close</button>
+                        <button type="button" class=" [ btn btn-secondary outline btn-secondary-deny ] " data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -158,8 +172,8 @@
                     <div class=" [ modal-body ] ">
                         <h3 class=" [ text-center ] ">Are you sure you want to be this character?</h3>
                         <div class=" [ modal-body-buttons ] ">
-                            <button class=" [ btn btn-secondary outline ] " id="confirm" onclick="confirmDeny(this.id)">YEAH!</button>
-                            <button class=" [ btn btn-secondary outline ] " id="deny" onclick="confirmDeny(this.id)">Nope</button>
+                            <button class=" [ btn btn-secondary outline btn-secondary-confirm ] " id="confirm" onclick="confirmDeny(this.id)">YEAH!</button>
+                            <button class=" [ btn btn-secondary outline btn-secondary-deny ] " id="deny" onclick="confirmDeny(this.id)">Nope</button>
                         </div>
                     </div>
                 </div>

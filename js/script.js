@@ -135,7 +135,7 @@ function characterInfo_click(clicked) {
                 <p id="characterModalGender" class=" [ Cormorant ] ">Gender: ${character.gender}</p>
                 <p id="characterModalCulture" class=" [ Cormorant ] ">Culture: ${character.culture}</p>
                 <div>
-                    <p>Titles:</p>
+                    <h5 class=" [ Cormorant ] ">Titles:</h5>
                     <ul id="characterModalTitles" class=" [ Cormorant ] ">
                         ${
                             // learn this by heart
@@ -147,7 +147,7 @@ function characterInfo_click(clicked) {
                     </ul>
                 </div>
                 <div>
-                    <p class=" [ Cormorant ] ">Aliases:</p>
+                    <h5 class=" [ Cormorant ] ">Aliases:</h5>
                     <ul id="characterModalAliases" class=" [ Cormorant ] ">
                       ${
                         // learn this by heart

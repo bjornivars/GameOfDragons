@@ -1,13 +1,15 @@
 body{
-   // background-image: url("graphics/img/dragonWolf.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(228, 228, 228);
+    color: $color-white;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: 'Gloria Hallelujah', cursive;
-    // font-family: 'Cormorant Infant', serif;
+}
+
+.Cormorant{
+    font-family: 'Cormorant Infant', serif;
 }
 
 #skipToContent{
@@ -15,17 +17,11 @@ body{
     top: -40px;
     left: 0;
     z-index: 2000;
-    background-color: red;
-}
-
-.Cormorant{
-    font-family: 'Cormorant Infant', serif;
+    background-color: $color-red;
 }
 
 h1{
     font-family: 'Cormorant Infant', serif;
-
-    //font-family: sans-serif;
 }
 h2{
     font-family: 'Cormorant Infant', serif;
@@ -37,21 +33,10 @@ h3{
 .btn{
     font-family: 'Gloria Hallelujah', cursive;
 }
-.bg-dragonWolf{
-    // background: url(https://www.youtube.com/embed/LcF6ut-1M94);
+.bg-texture{
     background: url("graphics/img/darkBackground2_edit.jpg");
-    // background: url("graphics/img/dragonWolf.jpg");
-    background-color: black;
+    background-color: $color-black;
     width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.bg-throne{
-    // background: url("graphics/img/throneOverlayed.png");
-    background: url("graphics/img/darkBackground2_edit.jpg");
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -67,15 +52,12 @@ h3{
         top:0;
         bottom: 0;
         left: 0;
-        right: 0;
-          
+        right: 0;     
         margin: auto;
         text-align: center;
         &-text{
             font-family: 'Gloria Hallelujah', cursive;
-
             font-size: 2em;
-
         }
     }
     &-rules{
@@ -105,7 +87,7 @@ h3{
         &-circle{
             height: 25px;
             width: 25px;
-            background-color: red;
+            background-color: $color-red;
             border-radius: 50%;
             display: inline-block;
             margin-right: .8em;
@@ -115,7 +97,7 @@ h3{
         &-circle{
             height: 25px;
             width: 25px;
-            background-color: blue;
+            background-color: $color-blue;
             border-radius: 50%;
             display: inline-block;
             margin-right: 1em;
@@ -125,41 +107,35 @@ h3{
 
 
 .btn{
-    background-color: white;
-    color: black;
+    background-color: $color-white;
+    color: $color-black;
     border-radius: .2rem;
-    &-start{
-        background-color: #3B6A00;
-        color: white;
-    }
 }
 
 .players{
-
     &-box{
         &_img{
             width: 100%;
         }
-
     }
 }
 
 .square{
     font-family: 'Cormorant Infant', serif;    box-sizing: border-box;
     height: 75px;
-    border: 3px solid white;
+    border: 3px solid $color-white;
     &-yellow{
-        border: 3px solid #FDB62F;
+        border: 3px solid $color-orange;
         min-height: 110px;
     }
 }
 
 .red{
-    background-color: red;
+    background-color: $color-red;
 }
 
 .active{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid $color-white;
 }
 
 .disabled{
@@ -168,40 +144,37 @@ h3{
 
 .modal{ 
     &-header{
-        border-bottom: 1px solid #424242;
+        border-bottom: 1px solid $color-modal-gray;
     }
     &-dialog{
         max-width: 600px;
     }
     &-content{
         margin-top: 3em;
-        border: 2px solid #424242;
-        background-color: black;
+        border: 2px solid $color-modal-gray;
+        background-color: $color-black;
     }
     &-body{
         &-buttons{
             text-align: center;
             padding-top: 2em;
-
         }
     }
     &-footer{
-        border-top: 1px solid #424242;
+        border-top: 1px solid $color-modal-gray;
     }
 }
-.redBg{
-    background-color: rgb(78, 5, 5);
+.trapModalRed{
+    background-color: $color-modal-trap;
 }
 
 .focusPlayer1{ 
-    border: 2px solid blue;
+    border: 2px solid $color-blue;
 }
 
 .focusPlayer2{ 
-    border: 2px solid green;
+    border: 2px solid $color-green;
 }
-
-
 
 .dice{
     transition: all 0.75s 0.25s;
@@ -223,11 +196,11 @@ h3{
 .largeStartButton {
     padding: 50px;
     text-align: center;
-    background-color: rgb(83, 145, 7);
-    color: white;
+    background-color: $color-green;
+    color: $color-white;
     &:hover{
-        background-color: #424242;
-        color: white;
+        background-color: rgb(0, 83, 0);
+        color: $color-white;
     }
 }
 
@@ -238,21 +211,19 @@ opacity: .75;
 
 .btn-roll{
     width: 100%;
-    background-color: #3B6A00;
-    color: white;
-    border: 1px solid #3B6A00;
+    background-color: $color-green;
+    color: $color-white;
+    border: 1px solid $color-green;
     border-radius: 0.2rem;
     &:hover{
-        background-color: rgb(73, 121, 15);
+        background-color: rgb(0, 83, 0);
         cursor: pointer;
     }
 }
 
 .yellowBorder{
-    border-bottom: 3px solid #FDB62F;
+    border-bottom: 3px solid $color-orange;
 }
-
-
 
 .winnerGame{
     &-container{
@@ -263,7 +234,7 @@ opacity: .75;
             width: 80%;
             padding-top: 2em;
             margin: auto;
-            border-bottom: 3px solid #FDB62F;
+            border-bottom: 3px solid $color-orange;
         }
         &-player{
             padding-top: 1em;
@@ -275,34 +246,37 @@ opacity: .75;
         }
         &-btn{
             margin-top: 2em;
-            color: white;
-            background-color: #3B6A00;
+            color: $color-white;
+            background-color: $color-green;
             border-radius: 0.2rem;
             &:hover{
-                background-color: #5a6268;
-                color: white;
+                background-color: $color-btn-hover;
+                color: $color-white;
             }
         }
     }
 }
 
 
-.btn-secondary:focus{
-    box-shadow: 0 0 0 0.2rem white;
-}
-
-
-
-
-
-
-.close{
-    color: white;
-    &:hover{
-        color: red;
+.btn-secondary{
+    &:focus{
+    box-shadow: 0 0 0 0.2rem $color-white;
+    }
+    &-confirm:hover{
+        background-color: $color-green;
+        color: $color-white;
+    }
+    &-deny:hover{
+        background-color: $color-red;
     }
 }
 
+.close{
+    color: $color-white;
+    &:hover{
+        color: $color-red;
+    }
+}
 
 .rowtile{
     margin-left: 5em
@@ -312,18 +286,28 @@ opacity: .75;
     padding: 0;
 }
 
-
-
 .dropdown-menu{
     width: 500px;
     padding: 2em;
     color: black;
-    background-color: #FDB62F;
-    border: 1px solid #FDB62F;
+    background-color: $color-orange;
+    border: 1px solid $color-orange;
 }
 
 .outline{
     &:focus{
-        outline: 2px solid #FDB62F;
+        outline: 2px solid $color-orange;
+    }
+}
+
+.page-footer{
+    background-color: $color-orange;
+    color: $color-black;
+}
+
+.black{
+    color: $color-black;
+    &:hover{
+        color: $color-black;
     }
 }
