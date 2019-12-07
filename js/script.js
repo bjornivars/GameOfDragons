@@ -38,7 +38,7 @@ function setCorrectPlayerUrl(characterId) {
 
 // Optiond for the confirm/deny buttons
 function confirmDeny(clicked){
-    let splitClicked = clicked.split("-"); // Remove the "-" from id name and creates ["confirm", "id"]
+    let splitClicked = clicked.split("-"); // Remove the "-" from id name and creates array ["confirm", "id"]
     let decision = splitClicked[0]; 
     let characterId = splitClicked[1];
     let cardCharacterId = document.getElementById("card" + characterId); 

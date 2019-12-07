@@ -54,8 +54,8 @@
     <div class=" [ bg-texture ] ">
         <!--Container-->
         <div class=" [ container ] ">
-            <h1 class=" [ text-center outline ] " id="select" tabindex="4" >Select your character</h1>
-            <p class=" [ text-center outline ] " tabindex="5"> Click image for selecting</p>
+            <h1 class=" [ text-center outline ] " >Select your character</h1>
+            <p class=" [ text-center outline ] " > Click image for selecting</p>
             <div class=" [ player ] ">
                 <div class=" [ player-1 d-flex  ] ">
                     <div class=" [ player-1-circle ] "></div>
@@ -72,59 +72,59 @@
             </div>
 
             <div class=" [ cards row ] " id="cardContainer">
-                <div class=" [ m-auto cards-row row d-flex justify-content-between w-100 ] ">
+                <div class=" [ m-auto cards-row row d-flex justify-content-between w-100 ] " id="select">
                     <div id="card583" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="6" src="graphics/img/characters/circle_jonSnow.png" class=" [ cards-img w-100 outline ] " alt="Jon Icon" id="selectJon" onClick="choosePlayer(this.id)">
-                        <h2 class=" [ cards-name outline ] " tabindex="7" >Jon</h2>
-                        <button tabindex="8" href="" class=" [ btn btn-secondary outline ] " id="583" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="4" src="graphics/img/characters/circle_jonSnow.png" class=" [ cards-img w-100 outline ] " alt="Jon Icon" id="selectJon" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Jon</h2>
+                        <button tabindex="5" href="" class=" [ btn btn-secondary outline ] " id="583" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card957" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="9" src="graphics/img/characters/circle_sansa_colored.png" class=" [ cards-img w-100 outline ] " alt="Sansa Icon" id="selectSansa" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="10" class=" [ cards-name outline ] ">Sansa</h2>
-                        <button tabindex="11" href="" class=" [ outline btn btn-secondary  ] " id="957" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="6" src="graphics/img/characters/circle_sansa_colored.png" class=" [ cards-img w-100 outline ] " alt="Sansa Icon" id="selectSansa" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Sansa</h2>
+                        <button tabindex="7" href="" class=" [ outline btn btn-secondary  ] " id="957" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card339" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="12" src="graphics/img/characters/circle_eddard.png" class=" [ cards-img w-100 outline ] " alt="Eddard Icon" id="selectEddard" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="13" class=" [ cards-name outline ] ">Eddard</h2>
-                        <button tabindex="14" href="" class=" [ outline btn btn-secondary  ] " id="339" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="8" src="graphics/img/characters/circle_eddard.png" class=" [ cards-img w-100 outline ] " alt="Eddard Icon" id="selectEddard" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Eddard</h2>
+                        <button tabindex="9" href="" class=" [ outline btn btn-secondary  ] " id="339" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card148" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="15" src="graphics/img/characters/circle_arya_colored.png" class=" [ cards-img w-100 outline ] " alt="Arya Icon" id="selectArya" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="16" class=" [ cards-name outline ] ">Arya</h2>
-                        <button tabindex="17" href="" class=" [ outline btn btn-secondary  ] " id="148" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="10" src="graphics/img/characters/circle_arya_colored.png" class=" [ cards-img w-100 outline ] " alt="Arya Icon" id="selectArya" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Arya</h2>
+                        <button tabindex="11" href="" class=" [ outline btn btn-secondary  ] " id="148" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card271" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="18" src="graphics/img/characters/circle_daenerys.png" class=" [ cards-img w-100 outline ] " alt="Daenerys Icon" id="selectDaenerys" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="19" class=" [ cards-name outline ] ">Daenerys</h2>
-                        <button tabindex="20" href="" class=" [ outline btn btn-secondary  ] " id="271" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="12" src="graphics/img/characters/circle_daenerys.png" class=" [ cards-img w-100 outline ] " alt="Daenerys Icon" id="selectDaenerys" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Daenerys</h2>
+                        <button tabindex="13" href="" class=" [ outline btn btn-secondary  ] " id="271" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                 </div>
                 <p id="apiText"></p>
                 <div class=" [ row d-flex justify-content-between w-100 m-auto ] ">
                     <div id="card238" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="21" src="graphics/img/characters/circle_cercei.png" class=" [ cards-img w-100 outline ] " alt="Cersei Icon" id="selectCersei" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="22" class=" [ cards-name outline ] ">Cercei</h2>
-                        <button tabindex="23" href="" class=" [ btn btn-secondary outline ] " id="238" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="14" src="graphics/img/characters/circle_cercei.png" class=" [ cards-img w-100 outline ] " alt="Cersei Icon" id="selectCersei" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Cercei</h2>
+                        <button tabindex="15" href="" class=" [ btn btn-secondary outline ] " id="238" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card529" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="24" src="graphics/img/characters/circle_jaime.png" class=" [ cards-img w-100 outline ] " alt="Jaime Icon" id="selectJaime" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="25" class=" [ cards-name outline ] ">Jaime</h2>
-                        <button tabindex="26" href="" class=" [ btn btn-secondary outline ] " id="529" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="16" src="graphics/img/characters/circle_jaime.png" class=" [ cards-img w-100 outline ] " alt="Jaime Icon" id="selectJaime" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Jaime</h2>
+                        <button tabindex="17" href="" class=" [ btn btn-secondary outline ] " id="529" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card565" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="27" src="graphics/img/characters/circle_joffrey.png" class=" [ cards-img w-100 outline ] " alt="Joffrey Icon" id="selectJoffrey" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="28" class=" [ cards-name outline ] ">Joffrey</h2>
-                        <button tabindex="29" href="" class=" [ btn btn-secondary outline ] " id="565" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="18" src="graphics/img/characters/circle_joffrey.png" class=" [ cards-img w-100 outline ] " alt="Joffrey Icon" id="selectJoffrey" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Joffrey</h2>
+                        <button tabindex="19" href="" class=" [ btn btn-secondary outline ] " id="565" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card206" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="30" src="graphics/img/characters/circle_bran.png" class=" [ cards-img w-100 outline ] " alt="Brandon Icon" id="selectBrandon" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="31" class=" [ cards-name outline ] ">Brandon</h2>
-                        <button tabindex="32" href="" class=" [ btn btn-secondary outline ] " id="206" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="20" src="graphics/img/characters/circle_bran.png" class=" [ cards-img w-100 outline ] " alt="Brandon Icon" id="selectBrandon" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Brandon</h2>
+                        <button tabindex="21" href="" class=" [ btn btn-secondary outline ] " id="206" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                     <div id="card1052" class=" [ col-md-2 m-auto text-center ] ">
-                        <img tabindex="33" src="graphics/img/characters/circle_tyrion.png" class=" [ cards-img w-100 outline ] " alt="Tyrion Icon" id="selectTyrion" onClick="choosePlayer(this.id)">
-                        <h2 tabindex="34" class=" [ cards-name outline ] ">Tyrion</h2>
-                        <button tabindex="35" href="" class=" [ btn btn-secondary outline ] " id="1052" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
+                        <img tabindex="22" src="graphics/img/characters/circle_tyrion.png" class=" [ cards-img w-100 outline ] " alt="Tyrion Icon" id="selectTyrion" onClick="choosePlayer(this.id)">
+                        <h2 class=" [ cards-name outline ] ">Tyrion</h2>
+                        <button tabindex="23" href="" class=" [ btn btn-secondary outline ] " id="1052" type="button" onClick="characterInfo_click(this.id)" data-toggle="modal" data-target="#readMoreModal">Read more</button>
                     </div>
                 </div>
             </div>

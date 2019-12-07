@@ -113,6 +113,7 @@ h3{
 }
 
 .players{
+    padding-top: 10px;
     &-box{
         &_img{
             width: 100%;
@@ -126,7 +127,7 @@ h3{
     border: 3px solid $color-white;
     &-yellow{
         border: 3px solid $color-orange;
-        min-height: 110px;
+        min-height: 117px;
     }
 }
 
