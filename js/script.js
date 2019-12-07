@@ -80,8 +80,8 @@ sessionStorage.clear();
 // setCorrectPlayerUrl to have the id of the character so you get a full url
 function choosePlayer(clicked) {
     switch (clicked) {
-        // if the player clicks on "selectJon" image, give setCorrectPlayerUrl the paramater of 583, which is Jon´s url ending
-        case "selectJon":
+        
+        case "selectJon": // if the player clicks on "selectJon" image, give setCorrectPlayerUrl the paramater of 583, which is Jon´s url ending
             setCorrectPlayerUrl("583"); // This is where the characterId is passed in
             break;
         case "selectSansa":
@@ -154,7 +154,7 @@ function characterInfo_click(clicked) {
                         // https://stackoverflow.com/questions/45812160/unexpected-comma-using-map
                         character.aliases.map(function(value) {
                           return `<li class=" [ Cormorant ] ">${value}</li>`
-                        }).join('')
+                        }).join('') // this part joins the array together as a string and removes the commas between 
                       }
                     </ul>
                 </div>`
