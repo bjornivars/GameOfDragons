@@ -11,8 +11,6 @@ let player2 = {
     character: document.getElementById("player2img"),
 }
 
-
-// TODO: make order of starting player random?
 let player1Active = true;
 
 // Found in characterTokens.js
