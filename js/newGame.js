@@ -45,7 +45,7 @@ function game(){
         // https://www.geeksforgeeks.org/html-dom-appendchild-method/
         document.getElementById(player1.tile.toString()).appendChild(player1.character);
 
-    }else{
+    } else {
         document.getElementById("playerWho").innerHTML = "Player 1";
         player2.tile += dice;
         player2.tile = checkTrap(player2.tile);
@@ -60,10 +60,8 @@ function game(){
     if(dice !== 6){
         player1Active = !player1Active;
     }
-    
-    
     // DEBUG 
-    console.log(player1.tile + " vs " + player2.tile);
+    // console.log(player1.tile + " vs " + player2.tile);
 }
 
 // Move characters to correct tiles

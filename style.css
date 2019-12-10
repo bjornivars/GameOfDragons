@@ -9,7 +9,7 @@ body {
 }
 
 .Cormorant {
-  font-family: "Cormorant Infant", serif;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 #skipToContent {
@@ -21,15 +21,15 @@ body {
 }
 
 h1 {
-  font-family: "Cormorant Infant", serif;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 h2 {
-  font-family: "Cormorant Infant", serif;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 h3 {
-  font-family: "Cormorant Infant", serif;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 .btn {
@@ -42,6 +42,13 @@ h3 {
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.bgFlame {
+  background: url("graphics/img/flame.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;
 }
 
 .container {
@@ -124,7 +131,7 @@ h3 {
   border: 3px solid #e4e4e4;
 }
 .square-yellow {
-  border: 3px solid #FDB62F;
+  border: 3px solid #776E39;
   min-height: 117px;
 }
 
@@ -206,9 +213,9 @@ h3 {
 
 .btn-roll {
   width: 100%;
-  background-color: green;
+  background-color: #776E39;
   color: #e4e4e4;
-  border: 1px solid green;
+  border: 1px solid #776E39;
   border-radius: 0.2rem;
 }
 .btn-roll:hover {
@@ -217,7 +224,7 @@ h3 {
 }
 
 .yellowBorder {
-  border-bottom: 3px solid #FDB62F;
+  border-bottom: 3px solid #776E39;
 }
 
 .winnerGame-container {
@@ -229,7 +236,7 @@ h3 {
   width: 80%;
   padding-top: 2em;
   margin: auto;
-  border-bottom: 3px solid #FDB62F;
+  border-bottom: 3px solid #776E39;
 }
 .winnerGame-container-player {
   padding-top: 1em;
@@ -238,11 +245,39 @@ h3 {
   width: 75%;
   margin-top: 2em;
   margin-bottom: 2em;
+  animation-name: spin;
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 10000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 10000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes winnerSpin {
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotateY(360deg);
+  }
 }
 .winnerGame-container-btn {
   margin-top: 2em;
-  color: #e4e4e4;
-  background-color: green;
+  color: #000000;
+  background-color: #e4e4e4;
   border-radius: 0.2rem;
 }
 .winnerGame-container-btn:hover {
@@ -250,6 +285,10 @@ h3 {
   color: #e4e4e4;
 }
 
+.btn-secondary:hover {
+  background-color: #776E39;
+  color: white;
+}
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem #e4e4e4;
 }
@@ -279,18 +318,18 @@ h3 {
 .dropdown-menu {
   width: 500px;
   padding: 2em;
-  color: black;
-  background-color: #FDB62F;
-  border: 1px solid #FDB62F;
+  color: #e4e4e4;
+  background-color: #776E39;
+  border: 1px solid #776E39;
 }
 
 .outline:focus {
-  outline: 2px solid #FDB62F;
+  outline: 2px solid #776E39;
 }
 
 .page-footer {
-  background-color: #FDB62F;
-  color: #000000;
+  background-color: #776E39;
+  color: #e4e4e4;
 }
 
 .black {
@@ -301,10 +340,10 @@ h3 {
 }
 
 .navbar {
-  background-color: #FDB62F;
+  background-color: #776E39;
 }
 .navbar a {
-  color: #000000;
+  color: #e4e4e4;
 }
 
 .flameBtn {

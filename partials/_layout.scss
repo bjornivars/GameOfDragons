@@ -9,7 +9,7 @@ body{
 }
 
 .Cormorant{
-    font-family: 'Cormorant Infant', serif;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 #skipToContent{
@@ -21,13 +21,13 @@ body{
 }
 
 h1{
-    font-family: 'Cormorant Infant', serif;
+    font-family: 'Cinzel Decorative', cursive;
 }
 h2{
-    font-family: 'Cormorant Infant', serif;
+    font-family: 'Cinzel Decorative', cursive;
 }
 h3{
-    font-family: 'Cormorant Infant', serif;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 .btn{
@@ -39,6 +39,13 @@ h3{
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.bgFlame{
+    background: url("graphics/img/flame.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
 }
 
 .container{
@@ -212,9 +219,9 @@ opacity: .75;
 
 .btn-roll{
     width: 100%;
-    background-color: $color-green;
+    background-color: $color-orange;
     color: $color-white;
-    border: 1px solid $color-green;
+    border: 1px solid $color-orange;
     border-radius: 0.2rem;
     &:hover{
         background-color: rgb(0, 83, 0);
@@ -244,11 +251,35 @@ opacity: .75;
             width: 75%;
             margin-top: 2em;
             margin-bottom: 2em;
+
+
+            // Code by Remani Victor (Great job!)
+            animation-name: spin;
+            animation-duration: 10000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            -moz-animation-name: spin;
+            -moz-animation-duration: 10000ms;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-timing-function: linear;
+
+            -webkit-animation-name: spin;
+            -webkit-animation-duration: 10000ms;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+
+            @keyframes winnerSpin { 100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); } }
+            @-moz-keyframes spin { 100% { -moz-transform: rotateY(360deg); } }
+            @-webkit-keyframes spin { 100% { -webkit-transform: rotateY(360deg); } }
+        
+
+
         }
         &-btn{
             margin-top: 2em;
-            color: $color-white;
-            background-color: $color-green;
+            color: $color-black;
+            background-color: $color-white;
             border-radius: 0.2rem;
             &:hover{
                 background-color: $color-btn-hover;
@@ -260,6 +291,10 @@ opacity: .75;
 
 
 .btn-secondary{
+    &:hover{
+        background-color: $color-orange;
+        color: white;
+    }
     &:focus{
     box-shadow: 0 0 0 0.2rem $color-white;
     }
@@ -290,7 +325,7 @@ opacity: .75;
 .dropdown-menu{
     width: 500px;
     padding: 2em;
-    color: black;
+    color: $color-white;
     background-color: $color-orange;
     border: 1px solid $color-orange;
 }
@@ -303,7 +338,7 @@ opacity: .75;
 
 .page-footer{
     background-color: $color-orange;
-    color: $color-black;
+    color: $color-white;
 }
 
 .black{
