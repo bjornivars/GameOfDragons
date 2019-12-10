@@ -136,7 +136,7 @@ h3 {
 }
 
 .red {
-  background-color: red;
+  background-color: #4e0505;
 }
 
 .active {
@@ -198,6 +198,7 @@ h3 {
 
 .largeStartButton {
   padding: 50px;
+  font-size: 50px;
   text-align: center;
   background-color: green;
   color: #e4e4e4;
@@ -219,7 +220,7 @@ h3 {
   border-radius: 0.2rem;
 }
 .btn-roll:hover {
-  background-color: #005300;
+  background-color: #4a441f;
   cursor: pointer;
 }
 
@@ -297,7 +298,7 @@ h3 {
   color: #e4e4e4;
 }
 .btn-secondary-deny:hover {
-  background-color: red;
+  background-color: #4e0505;
 }
 
 .close {

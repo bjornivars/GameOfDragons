@@ -139,7 +139,7 @@ h3{
 }
 
 .red{
-    background-color: $color-red;
+    background-color: $color-dark-red;
 }
 
 .active{
@@ -173,7 +173,7 @@ h3{
     }
 }
 .trapModalRed{
-    background-color: $color-modal-trap;
+    background-color: $color-dark-red;
 }
 
 .focusPlayer1{ 
@@ -203,6 +203,7 @@ h3{
 }
 .largeStartButton {
     padding: 50px;
+    font-size: 50px;
     text-align: center;
     background-color: $color-green;
     color: $color-white;
@@ -224,7 +225,7 @@ opacity: .75;
     border: 1px solid $color-orange;
     border-radius: 0.2rem;
     &:hover{
-        background-color: rgb(0, 83, 0);
+        background-color: #4a441f;
         cursor: pointer;
     }
 }
@@ -303,7 +304,7 @@ opacity: .75;
         color: $color-white;
     }
     &-deny:hover{
-        background-color: $color-red;
+        background-color: $color-dark-red;
     }
 }
 
