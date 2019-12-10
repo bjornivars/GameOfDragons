@@ -1,7 +1,7 @@
 body {
   background-repeat: no-repeat;
   background-size: cover;
-  color: #e4e4e4;
+  color: #FFFFFF;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -112,7 +112,7 @@ h3 {
 }
 
 .btn {
-  background-color: #e4e4e4;
+  background-color: #FFFFFF;
   color: #000000;
   border-radius: 0.2rem;
 }
@@ -128,7 +128,7 @@ h3 {
   font-family: "Cormorant Infant", serif;
   box-sizing: border-box;
   height: 75px;
-  border: 3px solid #e4e4e4;
+  border: 3px solid #FFFFFF;
 }
 .square-yellow {
   border: 3px solid #776E39;
@@ -140,7 +140,7 @@ h3 {
 }
 
 .active {
-  border-bottom: 2px solid #e4e4e4;
+  border-bottom: 2px solid #FFFFFF;
 }
 
 .disabled {
@@ -201,11 +201,11 @@ h3 {
   font-size: 50px;
   text-align: center;
   background-color: green;
-  color: #e4e4e4;
+  color: #FFFFFF;
 }
 .largeStartButton:hover {
   background-color: #005300;
-  color: #e4e4e4;
+  color: #FFFFFF;
 }
 
 .modal-backdrop.show {
@@ -215,7 +215,7 @@ h3 {
 .btn-roll {
   width: 100%;
   background-color: #776E39;
-  color: #e4e4e4;
+  color: #FFFFFF;
   border: 1px solid #776E39;
   border-radius: 0.2rem;
 }
@@ -278,31 +278,35 @@ h3 {
 .winnerGame-container-btn {
   margin-top: 2em;
   color: #000000;
-  background-color: #e4e4e4;
+  background-color: #FFFFFF;
   border-radius: 0.2rem;
 }
 .winnerGame-container-btn:hover {
   background-color: #5a6268;
-  color: #e4e4e4;
+  color: #FFFFFF;
 }
 
 .btn-secondary:hover {
   background-color: #776E39;
   color: white;
 }
+.btn-secondary:active {
+  background-color: #4a441f !important;
+  color: white;
+}
 .btn-secondary:focus {
-  box-shadow: 0 0 0 0.2rem #e4e4e4;
+  box-shadow: 0 0 0 0.2rem #FFFFFF;
 }
 .btn-secondary-confirm:hover {
   background-color: green;
-  color: #e4e4e4;
+  color: #FFFFFF;
 }
 .btn-secondary-deny:hover {
   background-color: #4e0505;
 }
 
 .close {
-  color: #e4e4e4;
+  color: #FFFFFF;
 }
 .close:hover {
   color: red;
@@ -319,7 +323,7 @@ h3 {
 .dropdown-menu {
   width: 500px;
   padding: 2em;
-  color: #e4e4e4;
+  color: #FFFFFF;
   background-color: #776E39;
   border: 1px solid #776E39;
 }
@@ -330,7 +334,7 @@ h3 {
 
 .page-footer {
   background-color: #776E39;
-  color: #e4e4e4;
+  color: #FFFFFF;
 }
 
 .black {
@@ -344,7 +348,7 @@ h3 {
   background-color: #776E39;
 }
 .navbar a {
-  color: #e4e4e4;
+  color: #FFFFFF;
 }
 
 .flameBtn {

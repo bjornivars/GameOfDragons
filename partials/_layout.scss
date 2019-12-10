@@ -296,8 +296,12 @@ opacity: .75;
         background-color: $color-orange;
         color: white;
     }
+    &:active{
+        background-color: #4a441f!important;
+        color: white;
+    }
     &:focus{
-    box-shadow: 0 0 0 0.2rem $color-white;
+        box-shadow: 0 0 0 0.2rem $color-white;
     }
     &-confirm:hover{
         background-color: $color-green;
