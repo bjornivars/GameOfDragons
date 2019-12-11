@@ -22,6 +22,8 @@ function game(){
     let dice = Math.floor(Math.random() * 6) + 1; // Random number between 1 and 6
     // console.log("Dice shows " + dice);
     var diceDOM = document.querySelector('.dice');
+
+
     // Spin the dice
     if (diceDOM.classList.contains('rotate')) {
         diceDOM.classList.remove('rotate');
@@ -31,6 +33,7 @@ function game(){
     // 2. Display the result in DOM 
     setTimeout(function () {
         diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png';
+        playSound();
     }, 250);
 
 
@@ -79,7 +82,10 @@ document.getElementById("playerWho").innerHTML = "Roll dice";
 
 
 
-
+function playSound() {
+    var sound = document.getElementById("audio");
+    sound.play();
+}
 
 
 

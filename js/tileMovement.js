@@ -5,23 +5,27 @@ function checkTrap(tile){
         case 4:
             showTrapModal();
             trapText.innerHTML = "You just got pushed out of the window. Move back 2 steps";
-            // alert( "You just got pushed out of the window. Move back 2 steps")
+            document.getElementById("trapImage").src = "graphics/img/illustrations/branPushed.png";
             return tile - 2;
         case 12:
             showTrapModal();
-            trapText.innerHTML = "Khal Drogo just raped you :( 3 steps back";
+            trapText.innerHTML = "Your fathers head is on a spike! Yikes. Back 3 steps";
+            document.getElementById("trapImage").src = "graphics/img/illustrations/headOnSpike.png";
             return tile - 3;
         case 19:
             showTrapModal();
             trapText.innerHTML = "Hodor is holding the door shut. Move back 5 steps";
+            document.getElementById("trapImage").src = "graphics/img/illustrations/hodorHolding.png";
             return tile - 5;
         case 26:
             showTrapModal();
-            trapText.innerHTML = "Cersei blew up the city... 3 steps back";
+            trapText.innerHTML = "The horse kicked you off.. 3 steps back";
+            document.getElementById("trapImage").src = "graphics/img/illustrations/fallHorse.png";
             return tile - 3;
         case 32:
             showTrapModal();
             trapText.innerHTML = "You lost a battle.... Move back 21 steps";
+            document.getElementById("trapImage").src = "graphics/img/illustrations/lostBattle.png";
             return tile - 21;
         default:
             return tile;

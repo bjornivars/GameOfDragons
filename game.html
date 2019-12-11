@@ -20,15 +20,16 @@
     <meta property="og:description" content="Game of Dragons is a boardgame where you can play against your friend. Try not to hit the traps!"> <!-- ˜300 chars -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bishadow.com/SEMESTEROPPGAVE_2/index.html">
-    <meta property="og:image" content="graphics/img/logo3.png"> <!-- 200x200px - 1200x1200px -->
+    <meta property="og:image" content="graphics/img/darklogo.png"> <!-- 200x200px - 1200x1200px -->
 
 </head>
 
 <body>
+    <!--
     <audio id="myAudio" loop="loop">
         <source src="audio/soundTrack.mp3" />
     </audio>
-
+-->
     <div id="skipToContent">
       <a href="#roll" tabindex="1">jump to roll dice</a>
     </div>
@@ -75,6 +76,7 @@
                     </div>
                     <div class=" [ row text-center ] ">
                         <img src="graphics/img/dice/dice-5.png" alt="Dice" class=" [ dice col-md-8 ] " id="dice-1">
+                        <audio id="audio" src="audio/diceRoll.mp3"  ></audio>
                         <button class=" [ btn-roll col-md-12 mt-3 outline ] " id="roll" onclick="game()" tabindex="7">Roll dice</button>
                     </div>
                 </div>
@@ -225,6 +227,7 @@
                     <div class=" [ modal-body ] ">
                         <h3 class=" [ text-center ] " id="trapText"></h3>
                         <div class=" [ modal-body-buttons ] ">
+                            <img src="" id="trapImage" style="width: 100%; margin-bottom: 2em;">
                             <button class=" [ btn btn-secondary outline ] " id="trapOkayBtn" onclick="(closeTrapModal())">Oh well....</button>
                         </div>
                     </div>
@@ -257,6 +260,6 @@
     <script src="js/characterTokens.js"></script>
     <script src="js/tileMovement.js"></script>
     <script src="js/newGame.js"></script>
-    <!--<script src="js/testAudio.js"></script>-->
+    <script src="js/testAudio.js"></script>
 </body>
 </html>
