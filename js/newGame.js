@@ -33,9 +33,8 @@ function game(){
     // 2. Display the result in DOM 
     setTimeout(function () {
         diceDOM.src = 'graphics/img/dice/dice-' + dice + '.png';
-        playSound();
+        diceSound();
     }, 250);
-
 
     // give score to correct player
     if(player1Active){
@@ -70,9 +69,9 @@ function game(){
 document.getElementById("playerWho").innerHTML = "Roll dice";
 
 
-function playSound() {
-    var sound = document.getElementById("audio");
-    sound.play();
+function diceSound() {
+    var dicesound = document.getElementById("diceAudio");
+    dicesound.play();
 }
 
 

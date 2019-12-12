@@ -8,7 +8,7 @@ body {
   font-family: "Gloria Hallelujah", cursive;
 }
 
-.Cormorant {
+.cinzel {
   font-family: "Cinzel Decorative", cursive;
 }
 
@@ -260,20 +260,17 @@ h3 {
 .winnerGame-container-player {
   padding-top: 1em;
 }
-.winnerGame-container-img {
-  width: 75%;
-  margin-top: 2em;
-  margin-bottom: 2em;
+.winnerGame-container-rotater {
   animation-name: spin;
-  animation-duration: 10000ms;
+  animation-duration: 7000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   -moz-animation-name: spin;
-  -moz-animation-duration: 10000ms;
+  -moz-animation-duration: 7000ms;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
   -webkit-animation-name: spin;
-  -webkit-animation-duration: 10000ms;
+  -webkit-animation-duration: 7000ms;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
 }
@@ -291,6 +288,20 @@ h3 {
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotateY(360deg);
+  }
+}
+.winnerGame-container-img {
+  width: 75%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  animation: imageGrow 5000ms;
+}
+@keyframes imageGrow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
   }
 }
 .winnerGame-container-btn {
@@ -379,6 +390,19 @@ h3 {
 
 .goShow {
   display: block;
+}
+
+.rm-border-left {
+  border-left: none;
+}
+.rm-border-right {
+  border-right: none;
+}
+.rm-border-top {
+  border-top: none;
+}
+.rm-border-bottom {
+  border-bottom: none;
 }
 
 .navbar {

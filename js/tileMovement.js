@@ -37,6 +37,7 @@ function checkWinner(tile) {
     if (tile >= 34) {
         setPlayerImg();
         $('#winnerGameModal').modal('show');
+        winnerSound();
         if(player1Active){
             document.getElementById("winnerName").innerHTML = "Player 1";
             document.getElementById("winnerImg").src = player1.character.src;
@@ -59,3 +60,11 @@ function closeTrapModal(){
     console.log("egm");
 $('#trapModal').modal('hide');
 }
+
+
+function winnerSound() {
+    var winnerSound = document.getElementById("winnerAudio");
+    winnerSound.play();
+    document.getElementById("myAudio").pause();
+}
+

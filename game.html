@@ -9,43 +9,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Gloria+Hallelujah&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/fcf18181c4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel='icon' href='graphics/img/favicon.ico' type='image/x-icon'/>
-    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link rel='icon' href='graphics/img/favicon.ico' type='image/x-icon' />
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Gloria+Hallelujah|Lato&display=swap" rel="stylesheet">
 
     <!-- META TAGS FOR OPEN GRAPH -->
-    <meta name="description" content="Be the first to win the Game of Dragons!"> <!-- ˜150 chars -->
+    <meta name="description" content="Be the first to win the Game of Dragons!">
     <meta property="og:title" content="Game of Dragons">
-    <meta property="og:description" content="Game of Dragons is a boardgame where you can play against your friend. Try not to hit the traps!"> <!-- ˜300 chars -->
+    <meta property="og:description" content="Game of Dragons is a boardgame where you can play against your friend. Try not to hit the traps!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bishadow.com/SEMESTEROPPGAVE_2/index.html">
-    <meta property="og:image" content="graphics/img/darklogo.png"> <!-- 200x200px - 1200x1200px -->
+    <meta property="og:image" content="graphics/img/darklogo.png">
 
 </head>
 
 <body>
-    <!--
+
+    <!-- AUDIO -->
     <audio id="myAudio" loop="loop">
         <source src="audio/soundTrack.mp3" />
     </audio>
--->
+    <audio id="winnerAudio" src="audio/winnterSound.mp3" loop></audio>
+
+    <!-- Skip to content -->
     <div id="skipToContent">
-      <a href="#roll" tabindex="1">jump to roll dice</a>
+        <a href="#roll" tabindex="1">jump to roll dice</a>
     </div>
-    
+
+    <!-- Navigation -->
     <nav class=" [ navbar navbar-expand-md ] ">
         <div class=" [ mx-auto order-0 ] ">
-            <a class=" [ navbar-brand mx-auto ] " href="index.html" tabindex="2"><img src="graphics/img/logo_GameOfDragonsGOD.png" style="width:15%;"></a>
+            <a class=" [ navbar-brand mx-auto ] " href="index.html" tabindex="2"><img src="graphics/img/logo_GameOfDragonsGOD.png" style="width:15%;" alt="logo"></a>
         </div>
         <div class=" [ navbar-collapse collapse w-100 order-3 dual-collapse2 ] ">
             <ul class=" [ navbar-nav ml-auto ] ">
                 <li class=" [ nav-item dropdown ] ">
+                    <a class=" [ nav-link  outline-blue ] " onclick="toggleAudio()" tabindex="3" id="audioText">Mute Music</a>
+                </li>
+                <li class=" [ nav-item dropdown ] ">
                     <a class=" [ nav-link dropdown-toggle ] " data-toggle="dropdown" href="#" tabindex="3">Rules</a>
                     <div class=" [ dropdown-menu dropdown-menu-right ] ">
-                        <p class=" [ dropdown-item-text ] " >Spin the dice</p>
-                        <p class=" [ dropdown-item-text ] " >If you roll a 6, you get to roll one more time</p>
-                        <p class=" [ dropdown-item-text ] " >If you hit a trap, you are moved back the number of steps the trap says</p>
+                        <p class=" [ dropdown-item-text ] ">Spin the dice</p>
+                        <p class=" [ dropdown-item-text ] ">If you roll a 6, you get to roll one more time</p>
+                        <p class=" [ dropdown-item-text ] ">If you hit a trap, you are moved back the number of steps the trap says</p>
                         <p class=" [ dropdown-item-text ] ">First to reach tile 34 wins the game of dragons</p>
                     </div>
                 </li>
@@ -63,11 +69,10 @@
                             <div class="[ players-box col-md-4 no-gutters d-flex circle-dark ]" id="player1">
                                 <img src="graphics/img/illustrations/playerRed-06.png" class=" [ players-box_img outline ] " alt="player 1" id="player1img" tabindex="4">
                             </div>
-                                    <p class=" [ circle ] " id="smallP1">P1</p>
-                                    <p class=" [ circle ] " id="smallP1">P2</p>
+                            <p class=" [ circle ] " id="smallP1">P1</p>
+                            <p class=" [ circle ] " id="smallP1">P2</p>
                             <div class=" [ players-box col-md-4 no-gutters d-flex circle-dark ] ">
                                 <img src="" class=" [ players-box_img outline ] " alt="player 2" id="player2img" tabindex="5">
-                                
                             </div>
                         </div>
                     </div>
@@ -76,32 +81,32 @@
                     </div>
                     <div class=" [ row text-center ] ">
                         <img src="graphics/img/dice/dice-5.png" alt="Dice" class=" [ dice col-md-8 ] " id="dice-1">
-                        <audio id="audio" src="audio/diceRoll.mp3"  ></audio>
+                        <audio id="diceAudio" src="audio/diceRoll.mp3"></audio>
                         <button class=" [ btn-roll col-md-12 mt-3 outline ] " id="roll" onclick="game()" tabindex="7">Roll dice</button>
                     </div>
                 </div>
 
                 <div class=" [ col-md-10 boardTiles ] ">
                     <div class="row d-flex rowtile">
-                        <div class=" [ col-md-1 square ]  " id="1">1
+                        <div class=" [ col-md-1 square rm-border-right ]  " id="1">1
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="2">2
+                        <div class=" [ col-md-1 square rm-border-right ]  " id="2">2
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="3">3
+                        <div class=" [ col-md-1 square rm-border-right ]  " id="3">3
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square red ]  " id="4">4
+                        <div class=" [ col-md-1 square red rm-border-right ]  " id="4">4
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="5">5
+                        <div class=" [ col-md-1 square rm-border-right ]  " id="5">5
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="6">6
+                        <div class=" [ col-md-1 square rm-border-right ]  " id="6">6
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="7">7
+                        <div class=" [ col-md-1 square rm-border-right ]  " id="7">7
                             <br>
                         </div>
                         <div class=" [ col-md-1 square ]  " id="8">8
@@ -109,7 +114,7 @@
                         </div>
                     </div>
                     <div class=" [ row d-flex rowtile ] ">
-                        <div class=" [ offset-md-7 col-md-1 square ]  " id="9">9
+                        <div class=" [ offset-md-7 col-md-1 square rm-border-top rm-border-bottom ]  " id="9">9
                             <br>
                         </div>
                     </div>
@@ -117,22 +122,22 @@
                         <div class=" [ col-md-1 square ]  " id="17">17
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="16">16
+                        <div class=" [ col-md-1 square rm-border-left   ]  " id="16">16
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="15">15
+                        <div class=" [ col-md-1 square rm-border-left ]  " id="15">15
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="14">14
+                        <div class=" [ col-md-1 square rm-border-left ]  " id="14">14
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="13">13
+                        <div class=" [ col-md-1 square rm-border-left ]  " id="13">13
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square red ] " id="12">12
+                        <div class=" [ col-md-1 square red rm-border-left ] " id="12">12
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="11">11
+                        <div class=" [ col-md-1 square rm-border-left rm-border-right ]  " id="11">11
                             <br>
                         </div>
                         <div class=" [ col-md-1 square ]  " id="10">10
@@ -140,39 +145,38 @@
                         </div>
                     </div>
                     <div class=" [ row d-flex rowtile ] ">
-                        <div class="  [ col-md-1 square ]  " id="18">18
+                        <div class="  [ col-md-1 square rm-border-top ]  " id="18">18
                             <br>
                         </div>
                     </div>
                     <div class=" [ row d-flex rowtile ] ">
-                        <div class=" [ col-md-1 square ]  red " id="19">19
+                        <div class=" [ col-md-1 square rm-border-top ]  red " id="19">19
                             <br>
                         </div>
                         <div class="  [ offset-md-1 col-md-1 square ]  " id="25">25
                             <br>
                         </div>
-                        <div class="  [ col-md-1 square red ]  " id="26">26
+                        <div class="  [ col-md-1 square red rm-border-left rm-border-right ]  " id="26">26
                             <br>
                         </div>
                         <div class="  [ col-md-1 square ]  " id="27">27
                             <br>
                         </div>
-                        <div class=" [ offset-md-2 col-md-1 square ]  " id="34">34
+                        <div class=" [ offset-md-2 col-md-1 square rm-border-bottom ]  " id="34">34
                             <br>
                         </div>
-
                     </div>
                     <div class=" [ row d-flex rowtile ] ">
-                        <div class=" [ col-md-1 square ]  " id="20">20
+                        <div class=" [ col-md-1 square rm-border-bottom rm-border-top ]  " id="20">20
                             <br>
                         </div>
-                        <div class=" [ offset-md-1 col-md-1 square ]  " id="24">24
+                        <div class=" [ offset-md-1 col-md-1 square rm-border-bottom rm-border-top ]  " id="24">24
                             <br>
                         </div>
-                        <div class=" [ offset-md-1 col-md-1 square ]  " id="28">28
+                        <div class=" [ offset-md-1 col-md-1 square rm-border-top rm-border-bottom ]  " id="28">28
                             <br>
                         </div>
-                        <div class=" [ offset-md-2 col-md-1 square ]  " id="33">33
+                        <div class=" [ offset-md-2 col-md-1 square rm-border-bottom ]  " id="33">33
                             <br>
                         </div>
                     </div>
@@ -181,19 +185,19 @@
                         <div class=" [ col-md-1 square ]  " id="21">21
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="22">22
+                        <div class=" [ col-md-1 square rm-border-left rm-border-right ]  " id="22">22
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="23">23
+                        <div class=" [ col-md-1 square  ]  " id="23">23
                             <br>
                         </div>
                         <div class=" [ offset-md-1 col-md-1 square ]  " id="29">29
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="30">30
+                        <div class=" [ col-md-1 square rm-border-left ]  " id="30">30
                             <br>
                         </div>
-                        <div class=" [ col-md-1 square ]  " id="31">31
+                        <div class=" [ col-md-1 square rm-border-left rm-border-right ]  " id="31">31
                             <br>
                         </div>
                         <div class=" [ col-md-1 square red ] " id="32">32
@@ -210,8 +214,7 @@
                 <div class=" [ row d-flex justify-content-center ] ">
                     <div class=" [ col-md-6 mt-md-0 mt-3 ] ">
                         <h5 class=" [ text-uppercase text-center ] ">About this game</h5>
-                        <p class=" [ text-center ] ">This game is designed using Adobe XD and developed using Bootstrap 4 and
-                            Vanilla JS. </p>
+                        <p class=" [ text-center ] ">This game is designed using Adobe XD and developed using Bootstrap 4 and Vanilla JS. </p>
                     </div>
                     <hr class=" [ clearfix w-100 d-md-none pb-3 ] ">
                 </div>
@@ -219,7 +222,6 @@
         </footer>
         <!-- Footer -->
 
-        
         <!-- Alert Modal -->
         <div class=" [ modal fade ] " id="trapModal" tabindex="-1" role="dialog" aria-labelledby="readMoreModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
             <div class=" [ modal-dialog ] " role="document">
@@ -242,8 +244,10 @@
                 <div class=" [ modal-content winnerGame ] " id="winnerModalBody">
                     <div class=" [ winnerGame-container text-center ] ">
                         <h3 class=" [ text-center winnerGame-container-header ] "> Winner of the Dragons </h3>
-                        <h2 class=" [ winnerGame-container-player ] " id="winnerName" ></h2>
-                        <img src="" class=" [ winnerGame-container-img ] " id="winnerImg" alt="Winner Image">
+                        <h2 class=" [ winnerGame-container-player ] " id="winnerName"></h2>
+                        <div class="winnerGame-container-rotater">
+                            <img src="" class=" [ winnerGame-container-img ] " id="winnerImg" alt="Winner Image">
+                        </div>
                         <br>
                         <a class=" [ btn btn-secondary col-md-12 outline ] " id="" href="selectCharacter.html">New game</a>
                     </div>
@@ -260,6 +264,11 @@
     <script src="js/characterTokens.js"></script>
     <script src="js/tileMovement.js"></script>
     <script src="js/newGame.js"></script>
-    <script src="js/testAudio.js"></script>
+    <script src="js/bgAudio.js"></script>
+    <script>
+        var audio = document.getElementById("myAudio");
+        audio.volume = 0.3;
+    </script>
 </body>
+
 </html>

@@ -8,7 +8,7 @@ body{
     font-family: 'Gloria Hallelujah', cursive;
 }
 
-.Cormorant{
+.cinzel{
     font-family: 'Cinzel Decorative', cursive;
 }
 .lato{
@@ -266,33 +266,39 @@ opacity: .75;
         &-player{
             padding-top: 1em;
         }
-        &-img{
-            width: 75%;
-            margin-top: 2em;
-            margin-bottom: 2em;
-
-
+        &-rotater{
             // Code by Remani Victor (Great job!)
+            
             animation-name: spin;
-            animation-duration: 10000ms;
+            animation-duration: 7000ms;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
 
             -moz-animation-name: spin;
-            -moz-animation-duration: 10000ms;
+            -moz-animation-duration: 7000ms;
             -moz-animation-iteration-count: infinite;
             -moz-animation-timing-function: linear;
 
             -webkit-animation-name: spin;
-            -webkit-animation-duration: 10000ms;
+            -webkit-animation-duration: 7000ms;
             -webkit-animation-iteration-count: infinite;
             -webkit-animation-timing-function: linear;
 
             @keyframes winnerSpin { 100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); } }
             @-moz-keyframes spin { 100% { -moz-transform: rotateY(360deg); } }
             @-webkit-keyframes spin { 100% { -webkit-transform: rotateY(360deg); } }
-        
-
+        }
+        &-img{
+            width: 75%;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            animation: imageGrow 5000ms;
+            @keyframes imageGrow {
+                from {
+                    transform: scale(0);
+                }
+                to {transform: scale(1);}
+              }
 
         }
         &-btn{
@@ -388,4 +394,19 @@ opacity: .75;
   }
   .goShow{
       display: block;
+  }
+
+  .rm-border{
+      &-left{
+        border-left: none;
+      }
+      &-right{
+          border-right: none;
+    }
+    &-top{
+        border-top: none;
+    }
+    &-bottom{
+        border-bottom: none;
+    }
   }
