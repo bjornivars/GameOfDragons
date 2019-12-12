@@ -1,9 +1,6 @@
 // Some global variables....
 let apiUrl = 'https://anapioficeandfire.com/api/characters/';
-let player1Character = "";
-let player2Character = "";
 let player1Active = true;
-
 // Gives CSS styling to the active and disabled player
 function activeClass() {
     if (player1Active) {
@@ -22,14 +19,10 @@ activeClass();
 // Set the correct URL to the current players choice of character
 function setCorrectPlayerUrl(characterId) {
     if (player1Active) {
-        player1Character = apiUrl + characterId; // Creates an url with correct id 
-        console.log("player1 " + player1Character);
         $('#confirmModal').modal('show'); // Show confirm modal
         document.getElementById("confirm").id = ("confirm-" + characterId); // Change id of "confirm"
         document.getElementById("deny").id = ("deny-" + characterId); // Change id of "deny"
     } else {
-        player2Character = apiUrl + characterId;
-        console.log("player2 " + player2Character);
         $('#confirmModal').modal('show'); 
         document.getElementById("confirm").id = ("confirm-" + characterId);
         document.getElementById("deny").id = ("deny-" + characterId);
