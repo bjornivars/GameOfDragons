@@ -47,7 +47,6 @@ function game(){
         checkWinner(player1.tile); // Check if current player is the winner
         // https://www.geeksforgeeks.org/html-dom-appendchild-method/
         document.getElementById(player1.tile.toString()).appendChild(player1.character);
-
     } else {
         document.getElementById("playerWho").innerHTML = "Player 1";
         player2.tile += dice;
@@ -67,27 +66,14 @@ function game(){
     // console.log(player1.tile + " vs " + player2.tile);
 }
 
-// Move characters to correct tiles
-function moveCharacterToTile(player, tile){
-    if(player){
-        document.getElementById(tile).appendChild(player1.character.src);
-    }else{
-        document.getElementById(tile).appendChild(player2.character.src);
-    }
-}
-
 // Default text on dice roller
 document.getElementById("playerWho").innerHTML = "Roll dice";
-
-
 
 
 function playSound() {
     var sound = document.getElementById("audio");
     sound.play();
 }
-
-
 
 
 

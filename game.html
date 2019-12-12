@@ -55,19 +55,19 @@
 
     <div class=" [ bg-texture ] ">
         <!--Container-->
-        <div class=" [ container ] ">
+        <div class=" [ container container-padding ] ">
             <div class=" [ row d-flex justify-contetnt-between ] ">
                 <div class=" [ sidecontent col-md-2 ] ">
                     <div class=" [ row ] ">
                         <div class=" [ players d-flex justify-content-between col-md-12 square-yellow ] ">
-                            <div class="[ players-box col-md-5 no-gutters ]" id="player1">
-                                <img src="" class=" [ players-box_img outline ] " alt="player 1" id="player1img" tabindex="4">
-                                <p class=" [ text-center ] ">Player 1</p>
+                            <div class="[ players-box col-md-4 no-gutters d-flex circle-dark ]" id="player1">
+                                <img src="graphics/img/illustrations/playerRed-06.png" class=" [ players-box_img outline ] " alt="player 1" id="player1img" tabindex="4">
                             </div>
-
-                            <div class=" [ players-box col-md-5 no-gutters ] ">
+                                    <p class=" [ circle ] " id="smallP1">P1</p>
+                                    <p class=" [ circle ] " id="smallP1">P2</p>
+                            <div class=" [ players-box col-md-4 no-gutters d-flex circle-dark ] ">
                                 <img src="" class=" [ players-box_img outline ] " alt="player 2" id="player2img" tabindex="5">
-                                <p class=" [ text-center ] ">Player 2</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -227,7 +227,7 @@
                     <div class=" [ modal-body ] ">
                         <h3 class=" [ text-center ] " id="trapText"></h3>
                         <div class=" [ modal-body-buttons ] ">
-                            <img src="" id="trapImage" style="width: 100%; margin-bottom: 2em; border-radius: 20px;">
+                            <img src="" id="trapImage" style="width: 100%; margin-bottom: 2em;">
                             <button class=" [ btn btn-secondary outline ] " id="trapOkayBtn" onclick="(closeTrapModal())">Oh well....</button>
                         </div>
                     </div>

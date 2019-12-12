@@ -132,28 +132,28 @@ function characterInfo_click(clicked) {
                 let character = result;
                 document.getElementById("modalBody").innerHTML = `
                 <h4 id="characterModalName" class=" [ Cormorant ] "> ${character.name}</h4>
-                <p id="characterModalGender" class=" [ Cormorant ] ">Gender: ${character.gender}</p>
-                <p id="characterModalCulture" class=" [ Cormorant ] ">Culture: ${character.culture}</p>
+                <p id="characterModalGender" class=" [ lato ] ">Gender: ${character.gender}</p>
+                <p id="characterModalCulture" class=" [ lato ] ">Culture: ${character.culture}</p>
                 <div>
                     <h5 class=" [ Cormorant ] ">Titles:</h5>
-                    <ul id="characterModalTitles" class=" [ Cormorant ] ">
+                    <ul id="characterModalTitles" class=" [ lato ] ">
                         ${
                             // learn this by heart
                             // https://stackoverflow.com/questions/45812160/unexpected-comma-using-map
                             character.titles.map(function(value) {
-                                return `<li class=" [ Cormorant ] ">${value}</li>`
+                                return `<li class=" [ lato ] ">${value}</li>`
                             }).join('')
                         }
                     </ul>
                 </div>
                 <div>
                     <h5 class=" [ Cormorant ] ">Aliases:</h5>
-                    <ul id="characterModalAliases" class=" [ Cormorant ] ">
+                    <ul id="characterModalAliases" class=" [ lato ] ">
                       ${
                         // learn this by heart
                         // https://stackoverflow.com/questions/45812160/unexpected-comma-using-map
                         character.aliases.map(function(value) {
-                          return `<li class=" [ Cormorant ] ">${value}</li>`
+                          return `<li class=" [ lato ] ">${value}</li>`
                         }).join('') // this part joins the array together as a string and removes the commas between 
                       }
                     </ul>
