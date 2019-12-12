@@ -12,6 +12,11 @@ Difficulties along the way:
   - Making choosePlayer work on image click
   - Creating the confirm/deny modal 
 
+What I would have done if i had more time: 
+  - Add animation to character movement
+  - Socket.io
+  - Change layout of board
+  - Better illustrations
 
 
 Moving parts:
